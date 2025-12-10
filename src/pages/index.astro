@@ -1,8 +1,148 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const featuredBagels = [
+  { name: 'Everything', description: 'Sesame, poppy, garlic, onion, and salt' },
+  { name: 'Sesame', description: 'Topped with toasted sesame seeds' },
+  { name: 'Plain', description: 'Classic sourdough bagel' },
+  { name: 'Pumpernickel', description: 'Dark rye with cocoa and molasses' },
+];
 ---
 
-<BaseLayout title="Home | Bagelwolf">
-  <h1 class="text-2xl font-bold">Welcome to Bagelwolf</h1>
-  <p class="mt-4">Home page – coming soon</p>
+<BaseLayout title="BagelWolf Bakery | Handrolled Sourdough Bagels in Durango">
+  <!-- Parallax Hero Section -->
+  <section class="grid grid-cols-2 gap-0">
+    <div class="h-[520px] overflow-hidden">
+      <img
+        src="/src/images/bagels-lg.png"
+        alt="Freshly baked sourdough bagels"
+        class="parallax-image w-full h-auto object-cover"
+        data-speed="0.3"
+      />
+    </div>
+    <div class="h-[520px] overflow-hidden">
+      <img
+        src="/src/images/boule-lg.png"
+        alt="Artisan sourdough boule"
+        class="parallax-image w-full h-auto object-cover"
+        data-speed="0.5"
+      />
+    </div>
+  </section>
+
+  <script>
+    function initParallax() {
+      const images = document.querySelectorAll('.parallax-image');
+      if (images.length === 0) return;
+
+      function updateParallax() {
+        const scrollY = window.scrollY;
+
+        images.forEach((img) => {
+          const speed = parseFloat((img as HTMLElement).dataset.speed) || 0.3;
+          const yOffset = scrollY * speed;
+          (img as HTMLElement).style.transform = `translateY(-${yOffset}px)`;
+        });
+      }
+
+      // Use requestAnimationFrame for smooth scrolling
+      let ticking = false;
+      function onScroll() {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            updateParallax();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+
+      window.addEventListener('scroll', onScroll);
+
+      // Initial call
+      updateParallax();
+    }
+
+    // Run on initial page load
+    initParallax();
+
+    // Re-run after view transitions (for SPA-like navigation)
+    document.addEventListener('astro:after-swap', initParallax);
+  </script>
+
+  <!-- Short Story Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="font-serif text-3xl md:text-4xl font-medium text-stone-900 mb-8 text-center">
+        The BagelWolf Story
+      </h2>
+      <div class="text-stone-600 text-lg leading-relaxed space-y-6">
+        <p>
+          BagelWolf is Adam Kiryk, a transplant from Brookline, Massachusetts who grew up on
+          northeastern-style bagels. After a career in design and software development, Adam left
+          to pursue his passion for baking sourdough breads.
+        </p>
+        <p>
+          Every bagel is made with a homemade sourdough starter, hand-rolled using the traditional
+          coil technique, and cold-fermented for 24 hours to develop the perfect flavor and crust.
+          The result? Chewy, flavorful bagels that taste like they should.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Bagels Section -->
+  <section class="bg-stone-50 py-16 md:py-20">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="font-serif text-3xl md:text-4xl font-medium text-stone-900 mb-10 text-center">
+        Our Bagels
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {featuredBagels.map((bagel) => (
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
+            <h3 class="text-lg font-semibold text-stone-900 mb-2">{bagel.name}</h3>
+            <p class="text-stone-600 text-sm">{bagel.description}</p>
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <a
+          href="/bagels"
+          class="text-brand font-medium hover:text-brand-light hover:underline transition-colors"
+        >
+          See all bagels &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Learn More Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <a
+          href="/bagels"
+          class="block p-8 bg-stone-100 rounded-lg hover:bg-stone-200 transition-colors group"
+        >
+          <h3 class="font-serif text-2xl font-medium text-stone-900 mb-3 group-hover:text-brand">
+            Explore Our Bagels
+          </h3>
+          <p class="text-stone-600">
+            From classic sesame to dark pumpernickel — discover our full lineup.
+          </p>
+        </a>
+        <a
+          href="/bread"
+          class="block p-8 bg-stone-100 rounded-lg hover:bg-stone-200 transition-colors group"
+        >
+          <h3 class="font-serif text-2xl font-medium text-stone-900 mb-3 group-hover:text-brand">
+            Artisan Breads
+          </h3>
+          <p class="text-stone-600">
+            Country sourdough, olive rosemary, Danish rugbrød — and when to get them.
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

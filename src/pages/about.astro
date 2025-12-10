@@ -1,8 +1,87 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const values = [
+  { title: 'Quality First', description: 'Every ingredient matters. We use high-quality flours and real, whole ingredients.' },
+  { title: 'Small Batch', description: 'We bake in small batches to ensure freshness and consistency in every bagel and loaf.' },
+  { title: 'Local & Personal', description: 'Made right here in Durango, with care and attention that only a small bakery can provide.' },
+  { title: 'Traditional Craft', description: 'Hand-rolled, boiled, and baked using time-honored techniques — no shortcuts.' },
+];
 ---
 
-<BaseLayout title="About | Bagelwolf">
-  <h1 class="text-2xl font-bold">About</h1>
-  <p class="mt-4">About page – coming soon</p>
+<BaseLayout title="About | BagelWolf Bakery">
+  <!-- Intro Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="font-serif text-4xl md:text-5xl font-medium text-stone-900 mb-8 text-center">
+        About BagelWolf
+      </h1>
+      <div class="text-stone-600 text-lg leading-relaxed space-y-6">
+        <p>
+          BagelWolf is Adam Kiryk, a transplant from Brookline, Massachusetts who grew up on
+          northeastern-style bagels. After a career in design and software development, Adam left
+          to pursue his passion for baking sourdough breads.
+        </p>
+        <p>
+          He's studied bread baking at the San Francisco Baking Institute, and he's staged at
+          bakeries and bagel-making establishments in Boulder, Chicago, and Cambridge. Now he
+          brings that experience to Durango, Colorado.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="bg-stone-50 py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="font-serif text-3xl md:text-4xl font-medium text-stone-900 mb-8 text-center">
+        The Process
+      </h2>
+      <div class="text-stone-600 text-lg leading-relaxed space-y-6">
+        <p>
+          Every BagelWolf bagel starts with a homemade sourdough starter, fed daily with a blend
+          of whole wheat and all-purpose flours. This living culture is the heart of what gives
+          our bagels their distinctive flavor and character.
+        </p>
+        <p>
+          The dough is hand-rolled using the traditional coil technique — a method that creates
+          the perfect shape and texture that machine-made bagels simply can't replicate. After
+          shaping, each bagel undergoes a 24-hour cold fermentation. This slow process develops
+          complex flavors and creates the ideal crust.
+        </p>
+        <p>
+          Finally, the bagels are boiled (the step most "bagels" skip) and then baked until
+          golden. The result is a bagel with a satisfying chew, a slight tang from the sourdough,
+          and a crust that has just the right amount of crackle.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="font-serif text-3xl md:text-4xl font-medium text-stone-900 mb-10 text-center">
+        What We Believe
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {values.map((value) => (
+          <div class="p-6 bg-stone-50 rounded-lg">
+            <h3 class="text-lg font-semibold text-stone-900 mb-2">{value.title}</h3>
+            <p class="text-stone-600">{value.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Placeholder Section -->
+  <section class="bg-stone-100 py-16 md:py-20">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <div class="aspect-video bg-stone-300 rounded-lg flex items-center justify-center max-w-3xl mx-auto">
+        <p class="text-stone-500 text-lg">Photo coming soon</p>
+      </div>
+      <p class="mt-4 text-stone-600 text-sm">The BagelWolf workspace in Durango</p>
+    </div>
+  </section>
 </BaseLayout>

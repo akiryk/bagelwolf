@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import '../styles/global.css';
 
 interface Props {
@@ -6,6 +7,20 @@ interface Props {
 }
 
 const { title = 'Bagelwolf' } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { href: '/bagels', label: 'BAGELS' },
+  { href: '/bread', label: 'BREADS' },
+  { href: '/about', label: 'ABOUT' },
+];
+
+function isActive(href: string): boolean {
+  if (href === '/') {
+    return currentPath === '/';
+  }
+  return currentPath.startsWith(href);
+}
 ---
 
 <html lang="en">
@@ -13,25 +28,130 @@ const { title = 'Bagelwolf' } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Spectral:wght@400;500;600&display=swap" rel="stylesheet">
+    <ViewTransitions />
     <!-- TODO: Analytics (GA4, Clarity) will be added here in Analytics epic -->
   </head>
-  <body class="min-h-screen flex flex-col">
-    <header class="bg-gray-100 py-4">
-      <nav class="max-w-5xl mx-auto px-4">
-        <ul class="flex gap-6">
-          <li><a href="/" class="hover:underline">Home</a></li>
-          <li><a href="/about" class="hover:underline">About</a></li>
-          <li><a href="/bagels" class="hover:underline">Bagels</a></li>
-          <li><a href="/bread" class="hover:underline">Bread</a></li>
-        </ul>
+  <body class="min-h-screen flex flex-col bg-white text-stone-800 font-sans">
+    <header class="bg-white py-8">
+      <!-- Centered Logo -->
+      <div class="text-center mb-6">
+        <a href="/" class="inline-block">
+          <img
+            src="/src/images/bagel-wolf-logo.png"
+            alt="BagelWolf - A wolf sitting on a stool holding a bagel"
+            class="w-[600px] max-w-full mx-auto"
+          />
+        </a>
+        <p class="text-stone-500 text-sm tracking-wide mt-2">
+          Handrolled Sourdough Bagels & Artisanal Breads
+        </p>
+      </div>
+
+      <!-- Navigation Bar -->
+      <nav class="border-t border-b border-stone-200">
+        <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+          <ul class="flex gap-6 md:gap-8">
+            {navLinks.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class:list={[
+                    'text-sm tracking-wider transition-colors',
+                    isActive(link.href)
+                      ? 'font-bold text-stone-900'
+                      : 'text-stone-600 hover:text-stone-900',
+                  ]}
+                  aria-current={isActive(link.href) ? 'page' : undefined}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <a
+            href="#"
+            class="px-5 py-2 bg-brand text-white text-sm font-medium tracking-wider rounded hover:bg-brand-dark transition-colors focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
+          >
+            ORDER NOW
+          </a>
+          <!-- TODO: Replace # with actual ordering link -->
+        </div>
       </nav>
     </header>
-    <main class="flex-1 max-w-5xl mx-auto px-4 py-8 w-full">
+
+    <main id="main-content" class="flex-1">
       <slot />
     </main>
-    <footer class="bg-gray-100 py-4">
-      <div class="max-w-5xl mx-auto px-4 text-center text-sm text-gray-600">
-        Bagelwolf
+
+    <footer class="bg-stone-800 text-stone-200 py-12">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Brand & Location -->
+          <div>
+            <h2 class="font-serif text-xl text-white mb-2">BagelWolf</h2>
+            <p class="text-stone-400">Durango, Colorado</p>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h2 class="font-serif text-xl text-white mb-2">Contact</h2>
+            <p class="text-stone-400">
+              <a href="mailto:hello@bagelwolf.com" class="hover:text-white transition-colors">
+                hello@bagelwolf.com
+              </a>
+            </p>
+            <p class="text-stone-400 mt-1">
+              <a href="https://instagram.com/bagelwolf" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
+                @bagelwolf
+              </a>
+            </p>
+          </div>
+
+          <!-- Newsletter Signup -->
+          <div>
+            <h2 class="font-serif text-xl text-white mb-2">Stay Updated</h2>
+            <p class="text-stone-400 text-sm mb-3">Get bake schedules and new bagel flavors by email.</p>
+            <!-- TODO: Wire to MailerLite in Email Capture epic -->
+            <form action="#" method="POST" class="space-y-2">
+              <div>
+                <label for="footer-name" class="sr-only">Your name</label>
+                <input
+                  type="text"
+                  id="footer-name"
+                  name="name"
+                  placeholder="Your name"
+                  autocomplete="name"
+                  class="w-full px-3 py-2 bg-stone-700 border border-stone-600 rounded text-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-brand"
+                />
+              </div>
+              <div>
+                <label for="footer-email" class="sr-only">Your email</label>
+                <input
+                  type="email"
+                  id="footer-email"
+                  name="email"
+                  placeholder="Your email"
+                  autocomplete="email"
+                  required
+                  class="w-full px-3 py-2 bg-stone-700 border border-stone-600 rounded text-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-brand"
+                />
+              </div>
+              <button
+                type="submit"
+                class="w-full px-4 py-2 bg-brand text-white font-medium rounded hover:bg-brand-dark transition-colors focus:outline-none focus:ring-2 focus:ring-brand"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-8 border-t border-stone-700 text-center text-stone-500 text-sm">
+          &copy; {new Date().getFullYear()} BagelWolf. All rights reserved.
+        </div>
       </div>
     </footer>
   </body>

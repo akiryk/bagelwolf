@@ -1,8 +1,78 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { breads, schedule } from '../data/breads';
 ---
 
-<BaseLayout title="Bread | Bagelwolf">
-  <h1 class="text-2xl font-bold">Bread</h1>
-  <p class="mt-4">Bread page – coming soon</p>
+<BaseLayout title="Bread | BagelWolf Bakery">
+  <!-- Intro Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h1 class="font-serif text-4xl md:text-5xl font-medium text-stone-900 mb-6">
+        Artisan Breads
+      </h1>
+      <p class="text-lg text-stone-600">
+        All our breads are naturally leavened with the same sourdough starter we use for our bagels.
+        Long, slow fermentation for maximum flavor and digestibility.
+      </p>
+    </div>
+  </section>
+
+  <!-- Bread Grid -->
+  <section class="bg-stone-50 py-16 md:py-20">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {breads.map((bread) => (
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
+            <div class="aspect-square bg-stone-200 rounded-md mb-4 flex items-center justify-center">
+              <span class="text-stone-400 text-sm">Photo coming soon</span>
+            </div>
+            <h2 class="text-xl font-semibold text-stone-900 mb-2">{bread.name}</h2>
+            <p class="text-stone-600 mb-2">{bread.description}</p>
+            {bread.schedule && (
+              <p class="text-brand text-sm font-medium">Available: {bread.schedule}</p>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Baking Schedule -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="font-serif text-3xl md:text-4xl font-medium text-stone-900 mb-8 text-center">
+        Baking Schedule
+      </h2>
+      <div class="bg-stone-50 rounded-lg p-6 md:p-8">
+        <p class="text-stone-600 mb-6 text-center">
+          We bake on a weekly schedule. Order ahead to make sure you get what you want.
+        </p>
+        <div class="space-y-4">
+          {schedule.map((day) => (
+            <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 pb-4 border-b border-stone-200 last:border-0 last:pb-0">
+              <span class="font-semibold text-stone-900 sm:w-28">{day.day}</span>
+              <span class="text-stone-600">{day.items}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Order CTA -->
+  <section class="bg-orange-50 py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="font-serif text-2xl md:text-3xl font-medium text-stone-900 mb-4">Want to reserve a loaf?</h2>
+      <p class="text-stone-600 mb-6">
+        Our breads sell out fast. Order ahead to guarantee yours.
+      </p>
+      <a
+        href="#"
+        class="inline-block px-8 py-4 bg-brand text-white text-lg font-semibold rounded hover:bg-brand-dark transition-colors focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
+      >
+        Order Online
+      </a>
+      <!-- TODO: Replace # with actual ordering link -->
+    </div>
+  </section>
 </BaseLayout>

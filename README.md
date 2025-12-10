@@ -51,12 +51,37 @@ Format code with Prettier:
 npm run format
 ```
 
+## Deployment
+
+**Host:** [Netlify](https://www.netlify.com/)
+
+**Why Netlify?**
+- Generous free tier (100GB bandwidth/month)
+- Git-based CI: push to `main` → automatic build → deploy
+- Built-in form handling (useful for email signup)
+- Free HTTPS with automatic certificate management
+- Preview deployments for branches/PRs
+
+**Deployment workflow:**
+1. Edit code locally
+2. Commit and push to a feature branch
+3. Netlify creates a preview deployment (unique URL)
+4. Review changes at the preview URL
+5. Merge to `main`
+6. Netlify automatically deploys to production
+
+**Build settings:**
+- Build command: `npm run build`
+- Publish directory: `dist`
+- Node version: 18+
+
+**Environment variables:**
+Configure in Netlify dashboard under Site Settings → Environment Variables.
+
 ## Status
 
-This is an MVP skeleton. Future epics will add:
+Future epics will add:
 
-- Page content and design
 - Analytics (GA4, Clarity)
-- Email integration
-- Ordering system
-- Deployment
+- Email integration (MailerLite)
+- Ordering system (Hotplate)
