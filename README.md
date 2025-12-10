@@ -53,9 +53,10 @@ npm run format
 
 ## Deployment
 
-**Host:** [Netlify](https://www.netlify.com/)
+**Host:** [Netlify](https://app.netlify.com/projects/bagelwolf/overview)
 
 **Why Netlify?**
+
 - Generous free tier (100GB bandwidth/month)
 - Git-based CI: push to `main` → automatic build → deploy
 - Built-in form handling (useful for email signup)
@@ -63,6 +64,7 @@ npm run format
 - Preview deployments for branches/PRs
 
 **Deployment workflow:**
+
 1. Edit code locally
 2. Commit and push to a feature branch
 3. Netlify creates a preview deployment (unique URL)
@@ -71,6 +73,7 @@ npm run format
 6. Netlify automatically deploys to production
 
 **Build settings:**
+
 - Build command: `npm run build`
 - Publish directory: `dist`
 - Node version: 18+
