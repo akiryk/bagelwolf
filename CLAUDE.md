@@ -14,6 +14,7 @@ This is a new/empty project called "bagelwolf". Currently contains only logo ass
 ## Getting Started
 
 This project needs to be initialized. When setting up:
+
 1. Determine the project type and initialize accordingly (e.g., `npm init`, `cargo init`, etc.)
 2. Add appropriate build tooling and configuration
 3. Update this file with build commands and architecture details
