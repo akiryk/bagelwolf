@@ -28,9 +28,12 @@ function isActive(href: string): boolean {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Spectral:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Spectral:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <ViewTransitions />
     <!-- TODO: Analytics (GA4, Clarity) will be added here in Analytics epic -->
   </head>
@@ -40,7 +43,7 @@ function isActive(href: string): boolean {
       <div class="text-center mb-6">
         <a href="/" class="inline-block">
           <img
-            src="/src/images/bagel-wolf-logo.png"
+            src="/images/bagel-wolf-logo.png"
             alt="BagelWolf - A wolf sitting on a stool holding a bagel"
             class="w-[600px] max-w-full mx-auto"
           />
@@ -52,24 +55,28 @@ function isActive(href: string): boolean {
 
       <!-- Navigation Bar -->
       <nav class="border-t border-b border-stone-200">
-        <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+        <div
+          class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between"
+        >
           <ul class="flex gap-6 md:gap-8">
-            {navLinks.map((link) => (
-              <li>
-                <a
-                  href={link.href}
-                  class:list={[
-                    'text-sm tracking-wider transition-colors',
-                    isActive(link.href)
-                      ? 'font-bold text-stone-900'
-                      : 'text-stone-600 hover:text-stone-900',
-                  ]}
-                  aria-current={isActive(link.href) ? 'page' : undefined}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
+            {
+              navLinks.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    class:list={[
+                      'text-sm tracking-wider transition-colors',
+                      isActive(link.href)
+                        ? 'font-bold text-stone-900'
+                        : 'text-stone-600 hover:text-stone-900',
+                    ]}
+                    aria-current={isActive(link.href) ? 'page' : undefined}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))
+            }
           </ul>
           <a
             href="#"
@@ -99,12 +106,20 @@ function isActive(href: string): boolean {
           <div>
             <h2 class="font-serif text-xl text-white mb-2">Contact</h2>
             <p class="text-stone-400">
-              <a href="mailto:hello@bagelwolf.com" class="hover:text-white transition-colors">
+              <a
+                href="mailto:hello@bagelwolf.com"
+                class="hover:text-white transition-colors"
+              >
                 hello@bagelwolf.com
               </a>
             </p>
             <p class="text-stone-400 mt-1">
-              <a href="https://instagram.com/bagelwolf" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
+              <a
+                href="https://instagram.com/bagelwolf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-white transition-colors"
+              >
                 @bagelwolf
               </a>
             </p>
@@ -113,7 +128,9 @@ function isActive(href: string): boolean {
           <!-- Newsletter Signup -->
           <div>
             <h2 class="font-serif text-xl text-white mb-2">Stay Updated</h2>
-            <p class="text-stone-400 text-sm mb-3">Get bake schedules and new bagel flavors by email.</p>
+            <p class="text-stone-400 text-sm mb-3">
+              Get bake schedules and new bagel flavors by email.
+            </p>
             <!-- TODO: Wire to MailerLite in Email Capture epic -->
             <form action="#" method="POST" class="space-y-2">
               <div>
@@ -149,7 +166,9 @@ function isActive(href: string): boolean {
           </div>
         </div>
 
-        <div class="mt-8 pt-8 border-t border-stone-700 text-center text-stone-500 text-sm">
+        <div
+          class="mt-8 pt-8 border-t border-stone-700 text-center text-stone-500 text-sm"
+        >
           &copy; {new Date().getFullYear()} BagelWolf. All rights reserved.
         </div>
       </div>

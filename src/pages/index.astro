@@ -14,7 +14,7 @@ const featuredBagels = [
   <section class="grid grid-cols-2 gap-0">
     <div class="h-[520px] overflow-hidden">
       <img
-        src="/src/images/bagels-lg.png"
+        src="/images/bagels-lg.png"
         alt="Freshly baked sourdough bagels"
         class="parallax-image w-full h-auto object-cover"
         data-speed="0.3"
@@ -22,7 +22,7 @@ const featuredBagels = [
     </div>
     <div class="h-[520px] overflow-hidden">
       <img
-        src="/src/images/boule-lg.png"
+        src="/images/boule-lg.png"
         alt="Artisan sourdough boule"
         class="parallax-image w-full h-auto object-cover"
         data-speed="0.5"
@@ -73,19 +73,23 @@ const featuredBagels = [
   <!-- Short Story Section -->
   <section class="py-16 md:py-20">
     <div class="max-w-3xl mx-auto px-4">
-      <h2 class="font-serif text-3xl md:text-4xl font-medium text-stone-900 mb-8 text-center">
+      <h2
+        class="font-serif text-3xl md:text-4xl font-medium text-stone-900 mb-8 text-center"
+      >
         The BagelWolf Story
       </h2>
       <div class="text-stone-600 text-lg leading-relaxed space-y-6">
         <p>
-          BagelWolf is Adam Kiryk, a transplant from Brookline, Massachusetts who grew up on
-          northeastern-style bagels. After a career in design and software development, Adam left
-          to pursue his passion for baking sourdough breads.
+          BagelWolf is Adam Kiryk, a transplant from Brookline, Massachusetts
+          who grew up on northeastern-style bagels. After a career in design and
+          software development, Adam left to pursue his passion for baking
+          sourdough breads.
         </p>
         <p>
-          Every bagel is made with a homemade sourdough starter, hand-rolled using the traditional
-          coil technique, and cold-fermented for 24 hours to develop the perfect flavor and crust.
-          The result? Chewy, flavorful bagels that taste like they should.
+          Every bagel is made with a homemade sourdough starter, hand-rolled
+          using the traditional coil technique, and cold-fermented for 24 hours
+          to develop the perfect flavor and crust. The result? Chewy, flavorful
+          bagels that taste like they should.
         </p>
       </div>
     </div>
@@ -94,16 +98,22 @@ const featuredBagels = [
   <!-- Featured Bagels Section -->
   <section class="bg-stone-50 py-16 md:py-20">
     <div class="max-w-5xl mx-auto px-4">
-      <h2 class="font-serif text-3xl md:text-4xl font-medium text-stone-900 mb-10 text-center">
+      <h2
+        class="font-serif text-3xl md:text-4xl font-medium text-stone-900 mb-10 text-center"
+      >
         Our Bagels
       </h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {featuredBagels.map((bagel) => (
-          <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
-            <h3 class="text-lg font-semibold text-stone-900 mb-2">{bagel.name}</h3>
-            <p class="text-stone-600 text-sm">{bagel.description}</p>
-          </div>
-        ))}
+        {
+          featuredBagels.map((bagel) => (
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
+              <h3 class="text-lg font-semibold text-stone-900 mb-2">
+                {bagel.name}
+              </h3>
+              <p class="text-stone-600 text-sm">{bagel.description}</p>
+            </div>
+          ))
+        }
       </div>
       <div class="text-center mt-10">
         <a
@@ -124,7 +134,9 @@ const featuredBagels = [
           href="/bagels"
           class="block p-8 bg-stone-100 rounded-lg hover:bg-stone-200 transition-colors group"
         >
-          <h3 class="font-serif text-2xl font-medium text-stone-900 mb-3 group-hover:text-brand">
+          <h3
+            class="font-serif text-2xl font-medium text-stone-900 mb-3 group-hover:text-brand"
+          >
             Explore Our Bagels
           </h3>
           <p class="text-stone-600">
@@ -135,11 +147,14 @@ const featuredBagels = [
           href="/bread"
           class="block p-8 bg-stone-100 rounded-lg hover:bg-stone-200 transition-colors group"
         >
-          <h3 class="font-serif text-2xl font-medium text-stone-900 mb-3 group-hover:text-brand">
+          <h3
+            class="font-serif text-2xl font-medium text-stone-900 mb-3 group-hover:text-brand"
+          >
             Artisan Breads
           </h3>
           <p class="text-stone-600">
-            Country sourdough, olive rosemary, Danish rugbrød — and when to get them.
+            Country sourdough, olive rosemary, Danish rugbrød — and when to get
+            them.
           </p>
         </a>
       </div>
