@@ -34,6 +34,10 @@ For the full project vision and constraints, see:
 - [GA4](https://analytics.google.com/analytics/web/#/a377510954p516152057/reports/intelligenthome)
 - [Microsoft Clarity](https://clarity.microsoft.com/projects)
 
+**Ordering:**
+
+- [Hotplate](https://www.hotplate.com/bagelwolf) — online ordering platform
+
 ---
 
 ## 📦 Requirements
