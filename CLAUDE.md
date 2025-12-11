@@ -49,7 +49,8 @@ When working in this codebase:
 - **Deployment:** Netlify
 - **Assets:** Stored locally under `/public`
 - **Email:** MailerLite embed form
-- **Analytics:** GA4 + Microsoft Clarity
+- **Analytics:** GA4 + Microsoft Clarity (see `docs/analytics.md`)
+- **SEO:** Reusable SEO component (see `docs/seo.md`)
 
 ## File Types & Structure Guidance
 
@@ -60,6 +61,7 @@ Claude Code should keep the following conventions:
 - Components live in `src/components/`
 - Global styles remain within Tailwind config or `src/styles/`
 - Images should be optimized on import when practical
+- Documentation lives in `docs/`
 
 ## When Editing Content
 

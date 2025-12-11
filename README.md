@@ -31,7 +31,8 @@ For the full project vision and constraints, see:
 
 **Analytics:**
 
-- GA4 + Microsoft Clarity (to be added).
+- [GA4](https://analytics.google.com/analytics/web/#/a377510954p516152057/reports/intelligenthome)
+- [Microsoft Clarity](https://clarity.microsoft.com/projects)
 
 ---
 
@@ -95,8 +96,13 @@ npm run format
 
 ```
 /
+├─ docs/                # Documentation
+│  ├─ analytics.md      # GA4 + Clarity setup
+│  ├─ seo.md            # SEO & accessibility guide
+│  └─ pages.md          # Content structure
 ├─ public/              # Static assets served at root
 ├─ src/
+│  ├─ components/       # Reusable Astro components
 │  ├─ data/             # Typescript data
 │  ├─ layouts/          # Shared layouts (header, footer, wrappers)
 │  ├─ pages/            # `.astro` pages routed by filename
@@ -150,15 +156,23 @@ Dashboard: https://dashboard.mailerlite.com/
 
 ---
 
+## 📚 Documentation
+
+Detailed guides live in the `docs/` folder:
+
+- **[Analytics](./docs/analytics.md)** — GA4 and Microsoft Clarity setup, verification steps
+- **[SEO & Accessibility](./docs/seo.md)** — Meta tags, Open Graph, sitemap, accessibility checklist
+- **[Pages](./docs/pages.md)** — Content structure and page descriptions
+
+---
+
 ## 📌 Roadmap
 
 Future additions:
 
-- Analytics (GA4 + Clarity)
 - Enhanced email capture & welcome flow
 - Hotplate ordering integration
 - More content pages & bakery updates
-- Improved accessibility & SEO refinements
 
 ---
 
