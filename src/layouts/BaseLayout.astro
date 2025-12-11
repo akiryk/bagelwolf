@@ -31,11 +31,49 @@ function isActive(href: string): boolean {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Spectral:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Spectral:wght@200;300&display=swap"
       rel="stylesheet"
     />
     <ViewTransitions />
-    <!-- TODO: Analytics (GA4, Clarity) will be added here in Analytics epic -->
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZT1PZ1PR7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0ZT1PZ1PR7');
+    </script>
+    <!-- Microsoft Clarity -->
+    <script>
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window,document,"clarity","script","ujyyq6cqdg");
+    </script>
+    <!-- MailerLite Universal -->
+    <script>
+      (function (w, d, e, u, f, l, n) {
+        ((w[f] =
+          w[f] ||
+          function () {
+            (w[f].q = w[f].q || []).push(arguments);
+          }),
+          (l = d.createElement(e)),
+          (l.async = 1),
+          (l.src = u),
+          (n = d.getElementsByTagName(e)[0]),
+          n.parentNode.insertBefore(l, n));
+      })(
+        window,
+        document,
+        'script',
+        'https://assets.mailerlite.com/js/universal.js',
+        'ml'
+      );
+      ml('account', '1976134');
+    </script>
+    <!-- End MailerLite Universal -->
   </head>
   <body class="min-h-screen flex flex-col bg-white text-stone-800 font-sans">
     <header class="bg-white">
@@ -56,7 +94,7 @@ function isActive(href: string): boolean {
       <!-- Navigation Bar -->
       <nav class="border-t border-b border-stone-200">
         <div
-          class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between"
+          class="max-w-[1600px] mx-auto px-4 py-3 flex items-center justify-between"
         >
           <ul class="flex gap-6 md:gap-8">
             {
@@ -126,44 +164,7 @@ function isActive(href: string): boolean {
           </div>
 
           <!-- Newsletter Signup -->
-          <div>
-            <h2 class="font-serif text-xl text-white mb-2">Stay Updated</h2>
-            <p class="text-stone-400 text-sm mb-3">
-              Get bake schedules and new bagel flavors by email.
-            </p>
-            <!-- TODO: Wire to MailerLite in Email Capture epic -->
-            <form action="#" method="POST" class="space-y-2">
-              <div>
-                <label for="footer-name" class="sr-only">Your name</label>
-                <input
-                  type="text"
-                  id="footer-name"
-                  name="name"
-                  placeholder="Your name"
-                  autocomplete="name"
-                  class="w-full px-3 py-2 bg-stone-700 border border-stone-600 rounded text-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-brand"
-                />
-              </div>
-              <div>
-                <label for="footer-email" class="sr-only">Your email</label>
-                <input
-                  type="email"
-                  id="footer-email"
-                  name="email"
-                  placeholder="Your email"
-                  autocomplete="email"
-                  required
-                  class="w-full px-3 py-2 bg-stone-700 border border-stone-600 rounded text-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-brand"
-                />
-              </div>
-              <button
-                type="submit"
-                class="w-full px-4 py-2 bg-brand text-white font-medium rounded hover:bg-brand-dark transition-colors focus:outline-none focus:ring-2 focus:ring-brand"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
+          <div class="ml-embedded" data-form="37scIv"></div>
         </div>
 
         <div

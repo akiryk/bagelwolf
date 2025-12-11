@@ -1,4 +1,4 @@
-# BagelWolf Site Content Structure
+# Bagelwolf Site Content Structure
 
 This document defines the purpose and key content of each page.
 
@@ -9,6 +9,7 @@ This document defines the purpose and key content of each page.
 **Purpose:** Hook visitors, explain value quickly, send them to order or learn more.
 
 **Content:**
+
 - **Hero headline:** "Handrolled Sourdough Bagels & Artisanal Breads"
 - **Subheadline:** "Baked fresh in Durango, Colorado"
 - **Primary CTA:** "Order Online" button (links to ordering platform, TBD)
@@ -20,10 +21,11 @@ This document defines the purpose and key content of each page.
 
 ## About
 
-**Purpose:** Share your story, process, and ethos. Explain why BagelWolf bagels and bread are special.
+**Purpose:** Share your story, process, and ethos. Explain why Bagelwolf bagels and bread are special.
 
 **Content:**
-- **Origin story:** BagelWolf is Adam Kiryk, a transplant from Brookline, Massachusetts who grew up on northeastern-style bagels. After a career in design and software development, Adam left to pursue his passion for baking sourdough breads. He's studied bread baking at the San Francisco Baking Institute, and he's staged at bakeries and bagel-making establishments in Boulder, Chicago, and Cambridge.
+
+- **Origin story:** Bagelwolf is Adam Kiryk, a transplant from Brookline, Massachusetts who grew up on northeastern-style bagels. After a career in design and software development, Adam left to pursue his passion for baking sourdough breads. He's studied bread baking at the San Francisco Baking Institute, and he's staged at bakeries and bagel-making establishments in Boulder, Chicago, and Cambridge.
 - **Process/craft:**
   - Homemade sourdough starter fed with whole wheat and all-purpose flours
   - Hand-rolled using the traditional coil technique
@@ -39,6 +41,7 @@ This document defines the purpose and key content of each page.
 **Purpose:** Show the bagel menu clearly so visitors can decide what they want.
 
 **Content:**
+
 - **Intro:** Brief text about the bagels and approach
 - **Bagel types (v1):**
   | Slug | Name | Description |
@@ -57,6 +60,7 @@ This document defines the purpose and key content of each page.
 **Purpose:** Show what breads are baked and when visitors can get them.
 
 **Content:**
+
 - **Intro:** Brief text about bread style (levain, flours, etc.)
 - **Bread types (v1):**
   | Slug | Name | Description |
@@ -75,7 +79,8 @@ This document defines the purpose and key content of each page.
 ## Footer (all pages)
 
 **Content:**
-- Bakery name: BagelWolf Bakery
+
+- Bakery name: Bagelwolf Bakery
 - Location: Durango, Colorado
 - Contact: hello@bagelwolf.com (placeholder)
 - Social: @bagelwolf (placeholder)

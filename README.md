@@ -1,19 +1,48 @@
-# Bagelwolf
+# 🥯 Bagelwolf
 
-A static marketing site for a bagel bakery.
+A fast, modern, static marketing site for an artisanal bagel bakery.
 
-## Tech Stack
+Bagelwolf is built with **Astro** and **Tailwind CSS** to deliver a lightweight, content-focused website optimized for speed, accessibility, and easy long-term maintenance. The site is deployed on **Netlify** with automated Git-based deployments.
 
-- **Framework:** [Astro](https://astro.build/) – static site generator
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/) – utility-first CSS framework
+For the full project vision and constraints, see:
 
-**Why this stack?** Goal is a fast, content-first marketing site with minimal JavaScript. Astro's static-first approach and Tailwind's utility classes provide a lean, performant foundation without the overhead of heavier frameworks like Next.js or full React SPAs.
+🔗 **[`PROJECT_GOALS.md`](./PROJECT_GOALS.md)**
+🔗 **[`CLAUDE.md`](./CLAUDE.md)** (guidance for AI-assisted development)
 
-## Requirements
+---
 
-- Node.js 18+
+## 🚀 Tech Stack
 
-## Getting Started
+**Framework:**
+
+- [Astro](https://astro.build/) — static-first site generator with minimal JavaScript by default.
+
+**Styling:**
+
+- [Tailwind CSS](https://tailwindcss.com/) — utility-first styling for consistent UI and fast iteration.
+
+**Deployment:**
+
+- [Netlify](https://www.netlify.com/) — free-tier friendly hosting with automatic HTTPS and Git-based CI.
+
+**Email Capture:**
+
+- [MailerLite](https://www.mailerlite.com/) embedded forms.
+
+**Analytics:**
+
+- GA4 + Microsoft Clarity (to be added).
+
+---
+
+## 📦 Requirements
+
+- **Node.js 18+**
+- **npm** (bundled with Node)
+
+---
+
+## 🛠️ Development
 
 Install dependencies:
 
@@ -21,15 +50,20 @@ Install dependencies:
 npm install
 ```
 
-Start the dev server:
+Start the local dev server:
 
 ```bash
 npm run dev
 ```
 
-Visit http://localhost:4321 to view the site.
+Then visit:
+http://localhost:4321
 
-## Build & Preview
+Astro automatically reloads when you edit files.
+
+---
+
+## 🏗️ Build & Preview
 
 Create a production build:
 
@@ -37,13 +71,17 @@ Create a production build:
 npm run build
 ```
 
-Preview the production build locally:
+Preview the optimized site locally:
 
 ```bash
 npm run preview
 ```
 
-## Other Scripts
+The output will be generated in the `dist/` directory.
+
+---
+
+## 🧹 Other Scripts
 
 Format code with Prettier:
 
@@ -51,40 +89,88 @@ Format code with Prettier:
 npm run format
 ```
 
-## Deployment
+---
 
-**Host:** [Netlify](https://app.netlify.com/projects/bagelwolf/overview)
+## 📁 Project Structure (Simplified)
 
-**Why Netlify?**
+```
+/
+├─ public/              # Static assets served at root
+├─ src/
+│  ├─ data/             # Typescript data
+│  ├─ layouts/          # Shared layouts (header, footer, wrappers)
+│  ├─ pages/            # `.astro` pages routed by filename
+│  └─ styles/           # Global styles (if needed beyond Tailwind)
+├─ astro.config.mjs     # Astro configuration
+├─ tailwind.config.cjs  # Tailwind setup
+└─ package.json
+```
 
-- Generous free tier (100GB bandwidth/month)
-- Git-based CI: push to `main` → automatic build → deploy
-- Built-in form handling (useful for email signup)
-- Free HTTPS with automatic certificate management
-- Preview deployments for branches/PRs
+This structure may evolve, but simplicity is preferred.
 
-**Deployment workflow:**
+---
+
+## 🌐 Deployment
+
+**Host:** Netlify
+**Production URL:** configured via Netlify
+
+### Why Netlify?
+
+- Free tier with generous bandwidth
+- Automatic deploys from GitHub
+- Preview deployments for branches
+- Free HTTPS with automatic certificates
+- Fast CDN-backed asset delivery
+
+### Deployment Workflow
 
 1. Edit code locally
 2. Commit and push to a feature branch
-3. Netlify creates a preview deployment (unique URL)
-4. Review changes at the preview URL
+3. Netlify builds a preview URL
+4. Review changes
 5. Merge to `main`
-6. Netlify automatically deploys to production
+6. Netlify deploys to production automatically
 
-**Build settings:**
+### Build Settings
 
 - Build command: `npm run build`
 - Publish directory: `dist`
 - Node version: 18+
 
-**Environment variables:**
-Configure in Netlify dashboard under Site Settings → Environment Variables.
+Environment variables are managed in:
+**Netlify → Site Settings → Environment Variables**
 
-## Status
+---
 
-Future epics will add:
+## ✉️ Forms
 
-- Analytics (GA4, Clarity)
-- Email integration (MailerLite)
-- Ordering system (Hotplate)
+Subscriber forms use **MailerLite** embeds.
+Dashboard: https://dashboard.mailerlite.com/
+
+---
+
+## 📌 Roadmap
+
+Future additions:
+
+- Analytics (GA4 + Clarity)
+- Enhanced email capture & welcome flow
+- Hotplate ordering integration
+- More content pages & bakery updates
+- Improved accessibility & SEO refinements
+
+---
+
+## 🧩 Contributing
+
+This project uses both manual development and AI-assisted workflows (Claude Code, ChatGPT).
+Guidelines for AI tools live in:
+🔗 **[`CLAUDE.md`](./CLAUDE.md)**
+
+---
+
+## 🥯 About Bagelwolf
+
+Bagelwolf is a small artisanal bakery dedicated to slow-fermented bagels and breads, crafted in Durango, Colorado.
+This site exists to share the story, explain the craft, and make it easy to order fresh baked goods.
