@@ -122,8 +122,17 @@ function isActive(href: string): boolean {
         aria-expanded="false"
         aria-controls="mobile-menu"
       >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
 
@@ -140,7 +149,9 @@ function isActive(href: string): boolean {
           Handrolled Sourdough Bagels & Artisanal Sourdough Breads
         </p>
         <!-- Location text - mobile only -->
-        <p class="md:hidden font-sans text-warm-brown text-sm tracking-widest uppercase mt-4">
+        <p
+          class="md:hidden font-serif text-warm-brown text-xs tracking-widest uppercase mt-4"
+        >
           Made Fresh in Durango, Colorado
         </p>
       </div>
@@ -148,7 +159,9 @@ function isActive(href: string): boolean {
       <!-- Navigation Bar - desktop only -->
       <nav class="hidden md:block border-t border-b border-stone-200">
         <!-- Desktop nav with true center alignment -->
-        <div class="grid grid-cols-3 items-center max-w-[1600px] mx-auto px-4 py-3">
+        <div
+          class="grid grid-cols-3 items-center max-w-[1600px] mx-auto px-4 py-3"
+        >
           <!-- Left: navigation links -->
           <ul class="flex gap-8 justify-self-start">
             {
@@ -172,7 +185,9 @@ function isActive(href: string): boolean {
           </ul>
 
           <!-- Center: location text (truly centered) -->
-          <p class="font-sans text-warm-brown text-sm tracking-widest uppercase justify-self-center">
+          <p
+            class="font-serif text-warm-brown text-xs tracking-widest uppercase justify-self-center"
+          >
             Made Fresh in Durango, Colorado
           </p>
 
@@ -200,8 +215,17 @@ function isActive(href: string): boolean {
             class="p-2 text-stone-600 hover:text-stone-900 transition-colors"
             aria-label="Close menu"
           >
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"></path>
             </svg>
           </button>
         </div>
@@ -262,13 +286,16 @@ function isActive(href: string): boolean {
           menuClose.addEventListener('click', closeMenu);
 
           // Close menu when clicking a link
-          mobileMenu.querySelectorAll('a').forEach(link => {
+          mobileMenu.querySelectorAll('a').forEach((link) => {
             link.addEventListener('click', closeMenu);
           });
 
           // Close menu on escape key
           document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+            if (
+              e.key === 'Escape' &&
+              !mobileMenu.classList.contains('hidden')
+            ) {
               closeMenu();
             }
           });
