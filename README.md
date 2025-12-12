@@ -140,7 +140,7 @@ This structure may evolve, but simplicity is preferred.
 3. Netlify builds a preview URL
 4. Review changes
 5. Merge to `main`
-6. Netlify deploys to production automatically
+6. Netlify deploys to production automatically. See https://app.netlify.com/projects/bagelwolf/
 
 ### Build Settings
 
