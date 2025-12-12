@@ -14,8 +14,9 @@ const featuredBagels = [
   description="Fresh handrolled sourdough bagels and artisan breads baked in Durango, Colorado. Made with a homemade starter, traditional techniques, and 24-hour cold fermentation. Order online for Saturday pickup."
   image="/images/bagels-lg.png"
 >
-  <!-- Parallax Hero Section -->
-  <section class="grid grid-cols-2 gap-0">
+  <!-- Hero Section -->
+  <!-- Desktop: side-by-side with parallax -->
+  <section class="hidden md:grid grid-cols-2 gap-0">
     <div class="h-[520px] overflow-hidden">
       <img
         src="/images/bagels-lg.png"
@@ -34,8 +35,38 @@ const featuredBagels = [
     </div>
   </section>
 
+  <!-- Mobile: stacked with ORDER NOW button overlay -->
+  <section class="md:hidden relative">
+    <div class="relative">
+      <img
+        src="/images/bagels-lg.png"
+        alt="Freshly baked sourdough bagels"
+        class="w-full h-auto object-cover"
+      />
+      <!-- ORDER NOW button centered on first image -->
+      <div class="absolute inset-0 flex items-center justify-center">
+        <a
+          href="https://www.hotplate.com/bagelwolf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-8 py-3 bg-brand text-white text-lg font-medium tracking-wider rounded border-1 border-white hover:bg-brand-dark transition-colors focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
+        >
+          ORDER NOW
+        </a>
+      </div>
+    </div>
+    <img
+      src="/images/boule-lg.png"
+      alt="Artisan sourdough boule"
+      class="w-full h-auto object-cover"
+    />
+  </section>
+
   <script>
     function initParallax() {
+      // Only run parallax on desktop
+      if (window.innerWidth < 768) return;
+
       const images = document.querySelectorAll('.parallax-image');
       if (images.length === 0) return;
 
