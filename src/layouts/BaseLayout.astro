@@ -102,6 +102,15 @@ function isActive(href: string): boolean {
       ml('account', '1976134');
     </script>
     <!-- End MailerLite Universal -->
+
+    <!-- Fix MailerLite with Astro ViewTransitions -->
+    <script is:inline>
+      document.addEventListener('astro:after-swap', () => {
+        // Re-announce the account so ML re-initializes embeds added by the swap.
+        if (window.ml) window.ml('account', '1976134');
+      });
+    </script>
+
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
