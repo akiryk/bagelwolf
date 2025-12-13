@@ -103,53 +103,6 @@ function isActive(href: string): boolean {
     </script>
     <!-- End MailerLite Universal -->
 
-    <!-- Fix MailerLite with Astro ViewTransitions -->
-    <script is:inline>
-      (function () {
-        let loading = false;
-
-        function reloadMailerLiteEmbeds() {
-          const embeds = document.querySelectorAll('.ml-embedded[data-form]');
-          if (!embeds.length) return;
-
-          // Clear stale/uninitialized containers
-          embeds.forEach((el) => (el.innerHTML = ''));
-
-          // Avoid stacking multiple loads if the user navigates quickly
-          if (loading) return;
-          loading = true;
-
-          // Remove any previous "reloader" script we injected
-          const old = document.querySelector('script[data-ml-reloader="1"]');
-          if (old) old.remove();
-
-          // Inject a fresh copy so ML runs its embed scan again
-          const s = document.createElement('script');
-          s.async = true;
-          s.src =
-            'https://assets.mailerlite.com/js/universal.js?cb=' + Date.now();
-          s.setAttribute('data-ml-reloader', '1');
-
-          s.onload = () => {
-            loading = false;
-            if (window.ml) window.ml('account', '1976134');
-          };
-          s.onerror = () => {
-            loading = false;
-            console.warn(
-              '[MailerLite] failed to reload universal.js after swap'
-            );
-          };
-
-          document.head.appendChild(s);
-        }
-
-        // Initial load + every soft navigation
-        document.addEventListener('astro:page-load', reloadMailerLiteEmbeds);
-        document.addEventListener('astro:after-swap', reloadMailerLiteEmbeds);
-      })();
-    </script>
-
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
