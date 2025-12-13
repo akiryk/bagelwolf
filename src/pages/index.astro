@@ -15,21 +15,21 @@ const featuredBagels = [
   image="/images/bagels-lg.png"
 >
   <!-- Hero Section -->
-  <!-- Desktop: side-by-side with parallax -->
-  <section class="hidden md:grid grid-cols-2 gap-0">
-    <div class="h-[520px] overflow-hidden">
+  <!-- Desktop: side-by-side with parallax, 5/4 column split per 9-column grid -->
+  <section class="hidden md:flex">
+    <div class="hero-split-left h-[472px] overflow-hidden">
       <img
         src="/images/bagels-lg.png"
         alt="Freshly baked sourdough bagels"
-        class="parallax-image w-full h-auto object-cover"
+        class="parallax-image w-full h-[750px] object-cover"
         data-speed="0.3"
       />
     </div>
-    <div class="h-[520px] overflow-hidden">
+    <div class="hero-split-right h-[520px] overflow-hidden">
       <img
         src="/images/boule-lg.png"
         alt="Artisan sourdough boule"
-        class="parallax-image w-full h-auto object-cover"
+        class="parallax-image w-full h-[750px] object-cover"
         data-speed="0.5"
       />
     </div>
@@ -67,16 +67,26 @@ const featuredBagels = [
       // Only run parallax on desktop
       if (window.innerWidth < 768) return;
 
-      const images = document.querySelectorAll('.parallax-image');
-      if (images.length === 0) return;
+      const heroImages = document.querySelectorAll('.parallax-image');
+      const upImages = document.querySelectorAll('.parallax-image-up');
 
       function updateParallax() {
         const scrollY = window.scrollY;
 
-        images.forEach((img) => {
+        // Hero images: move up as you scroll
+        heroImages.forEach((img) => {
           const speed = parseFloat((img as HTMLElement).dataset.speed) || 0.3;
           const yOffset = scrollY * speed;
           (img as HTMLElement).style.transform = `translateY(-${yOffset}px)`;
+        });
+
+        // Upward parallax: starts low, moves up as you scroll
+        upImages.forEach((img) => {
+          const speed = parseFloat((img as HTMLElement).dataset.speed) || 0.4;
+          const startOffset =
+            parseFloat((img as HTMLElement).dataset.startOffset) || 100;
+          const yOffset = startOffset - scrollY * speed;
+          (img as HTMLElement).style.transform = `translateY(${yOffset}px)`;
         });
       }
 
@@ -106,37 +116,58 @@ const featuredBagels = [
   </script>
 
   <!-- Short Story Section -->
-  <section class="py-16 md:py-20">
-    <div class="max-w-3xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-light text-stone-900 mb-8">
-        The Bagelwolf Story
-      </h2>
-      <div
-        class="font-serif font-medium text-stone-600 text-xl leading-relaxed space-y-6"
-      >
-        <p>
-          Bagelwolf is Adam Kiryk, a transplant from Brookline, Massachusetts
-          who grew up on northeastern-style bagels. After a career in design and
-          software development, Adam left to pursue his passion for baking
-          sourdough breads.
-        </p>
-        <p>
-          Every bagel is made with a homemade sourdough starter, hand-rolled
-          using the traditional coil technique, and cold-fermented for 24 hours
-          to develop the perfect flavor and crust. The result? Chewy, flavorful
-          bagels that taste like they should.
-        </p>
+  <section class="grid-container mt-4 overflow-visible">
+    <div class="grid-9">
+      <!-- Puppy image in column 3 with upward parallax -->
+      <div class="col-start-3 col-span-1 overflow-visible">
+        <figure
+          class="parallax-image-up"
+          data-speed="0.25"
+          data-start-offset="250"
+        >
+          <img
+            src="/images/puppy-and-bagel.png"
+            alt="Playful puppy with a bagel"
+            class="w-full"
+          />
+          <figcaption class="font-sans font-light text-sm text-warm-brown mt-2">
+            Jojo, the Bagelwolf puppy
+          </figcaption>
+        </figure>
+      </div>
+      <div class="col-span-4 col-start-4">
+        <h2 class="text-3xl md:text-4xl font-light text-stone-900 mb-8">
+          The Bagelwolf Story
+        </h2>
+        <div
+          class="font-serif font-medium text-stone-600 text-xl leading-relaxed space-y-6"
+        >
+          <p>
+            Bagelwolf is Adam Kiryk, a transplant from Brookline, Massachusetts
+            who grew up on northeastern-style bagels. After a career in design
+            and software development, Adam left to pursue his passion for baking
+            sourdough breads.
+          </p>
+          <p>
+            Every bagel is made with a homemade sourdough starter, hand-rolled
+            using the traditional coil technique, and cold-fermented for 24
+            hours to develop the perfect flavor and crust. The result? Chewy,
+            flavorful bagels that taste like they should.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Signup Form -->
-  <section class="md:py-20">
-    <div class="max-w-3xl mx-auto px-4">
-      <h2 class="text-3xl md:text-3xl font-light text-stone-900 ml-5">
-        Stay updated!
-      </h2>
-      <div class="ml-embedded" data-form="37scIv"></div>
+  <section class="grid-container md:py-20">
+    <div class="grid-9">
+      <div class="col-span-4 col-start-4">
+        <h2 class="text-3xl md:text-3xl font-light text-stone-900">
+          Stay updated!
+        </h2>
+        <div class="ml-embedded" data-form="37scIv"></div>
+      </div>
     </div>
   </section>
 

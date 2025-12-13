@@ -164,9 +164,10 @@ function isActive(href: string): boolean {
 
       <!-- Navigation Bar - desktop only -->
       <nav class="hidden md:block border-t border-b border-stone-200">
-        <!-- Desktop nav with true center alignment -->
+        <!-- Desktop nav with true center alignment, respects grid margins -->
         <div
-          class="grid grid-cols-3 items-center max-w-[1600px] mx-auto px-4 py-3"
+          class="grid grid-cols-3 items-center mx-auto py-3"
+          style="padding-left: var(--grid-margin); padding-right: var(--grid-margin);"
         >
           <!-- Left: navigation links -->
           <ul class="flex gap-8 justify-self-start">

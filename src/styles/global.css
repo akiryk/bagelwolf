@@ -9,6 +9,58 @@
   --color-warm-brown: #A08067;
 }
 
+/* 9-Column Grid System */
+:root {
+  --grid-margin: 20px;
+  --grid-gutter: 40px;
+  --grid-columns: 9;
+}
+
+/* Grid container - respects margins */
+.grid-container {
+  width: 100%;
+  padding-left: var(--grid-margin);
+  padding-right: var(--grid-margin);
+}
+
+/* 9-column grid layout */
+.grid-9 {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: var(--grid-gutter);
+}
+
+/* Hero image split: 5 columns left, 4 columns right
+   Full bleed but respects the grid column boundaries */
+.hero-grid {
+  display: grid;
+  /* 5 columns + 4 gutters on left, 4 columns + 4 gutters on right */
+  /* Using fr units based on column count: 5fr + half-gutter : 4fr + half-gutter */
+  grid-template-columns: calc(5fr + var(--grid-gutter) / 2) calc(4fr + var(--grid-gutter) / 2);
+  gap: 0;
+}
+
+/* Alternative approach using a calculated percentage for the hero split
+   At the boundary between col 5 and col 6:
+   Left side = margin + 5 columns + 4.5 gutters
+   We approximate this with CSS calc based on viewport width */
+.hero-split {
+  display: flex;
+  width: 100%;
+}
+
+.hero-split-left {
+  /* 5 columns worth + half gutter, so split aligns with START of column 6 */
+  flex: none;
+  width: calc((100% * 5 / 9) + (var(--grid-gutter) / 2));
+}
+
+.hero-split-right {
+  /* 4 columns worth - half gutter */
+  flex: none;
+  width: calc((100% * 4 / 9) - (var(--grid-gutter) / 2));
+}
+
 /* Ensure visible focus outlines for keyboard navigation */
 :focus-visible {
   outline: 2px solid var(--color-brand);
@@ -22,5 +74,5 @@
 
 .ml-form-embedWrapper .ml-form-embedBody {
   /* Annoyingly, mailerlite doesn't let you modify padding so we need to override with important */
-  padding-top: 0 !important;
+  padding: 0 !important;
 }
