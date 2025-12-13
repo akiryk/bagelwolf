@@ -139,11 +139,17 @@ function isActive(href: string): boolean {
       <!-- Centered Logo -->
       <div class="text-center mb-6 mt-6 mx-6">
         <a href="/" class="inline-block">
-          <img
-            src="/images/animation-3-step.gif"
-            alt="BagelWolf - A wolf sitting on a stool holding a bagel"
-            class="w-full max-w-xs mx-auto mb-2"
-          />
+          <video
+            id="logo-video"
+            autoplay
+            muted
+            playsinline
+            preload="auto"
+            class="block max-w-xs mx-auto mb-4"
+          >
+            <source src="/video/animation-3-step.webm" type="video/webm" />
+            <source src="/video/animation-3-step.mp4" type="video/mp4" />
+          </video>
         </a>
         <p class="font-serif text-warm-brown text-lg tracking-wide">
           Handrolled Sourdough Bagels & Artisanal Sourdough Breads
