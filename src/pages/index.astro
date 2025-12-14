@@ -35,31 +35,24 @@ const featuredBagels = [
     </div>
   </section>
 
-  <!-- Mobile: stacked with ORDER NOW button overlay -->
+  <!-- Mobile: single combined hero image -->
   <section class="md:hidden relative">
-    <div class="relative">
-      <img
-        src="/images/bagels-lg.png"
-        alt="Freshly baked sourdough bagels"
-        class="w-full h-auto object-cover"
-      />
-      <!-- ORDER NOW button centered on first image -->
-      <div class="absolute inset-0 flex items-center justify-center">
-        <a
-          href="https://www.hotplate.com/bagelwolf"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="px-8 py-3 bg-brand text-white text-lg font-medium tracking-wider rounded border-1 border-white hover:bg-brand-dark transition-colors focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
-        >
-          ORDER NOW
-        </a>
-      </div>
-    </div>
     <img
-      src="/images/boule-lg.png"
-      alt="Artisan sourdough boule"
+      src="/images/hero-sm.png"
+      alt="Freshly baked sourdough bagels and artisan bread"
       class="w-full h-auto object-cover"
     />
+    <!-- ORDER NOW button centered -->
+    <div class="absolute inset-0 flex items-center justify-center">
+      <a
+        href="https://www.hotplate.com/bagelwolf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="px-8 py-3 bg-brand text-white text-lg font-medium tracking-wider rounded border-1 border-white hover:bg-brand-dark transition-colors focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
+      >
+        ORDER NOW
+      </a>
+    </div>
   </section>
 
   <script>
@@ -118,8 +111,8 @@ const featuredBagels = [
   <!-- Short Story Section -->
   <section class="grid-container mt-4 overflow-visible">
     <div class="grid-9">
-      <!-- Puppy image in column 3 with upward parallax -->
-      <div class="col-start-3 col-span-1 overflow-visible">
+      <!-- Puppy image in grid column (hidden at <840px) -->
+      <div class="hidden min-[840px]:block col-span-2 col-start-1 min-[1100px]:col-span-1 min-[1100px]:col-start-3 overflow-visible">
         <figure
           class="parallax-image-up"
           data-speed="0.25"
@@ -135,13 +128,24 @@ const featuredBagels = [
           </figcaption>
         </figure>
       </div>
-      <div class="col-span-4 col-start-4">
+      <div class="col-span-9 col-start-1 min-[840px]:col-span-6 min-[840px]:col-start-3 min-[1100px]:col-span-5 min-[1100px]:col-start-4 min-[1320px]:col-span-4">
         <h2 class="text-3xl md:text-4xl font-light text-stone-900 mb-8">
           The Bagelwolf Story
         </h2>
         <div
           class="font-serif font-medium text-stone-600 text-xl leading-relaxed space-y-6"
         >
+          <!-- Floated puppy for <840px screens -->
+          <figure class="float-left mr-6 mb-4 w-[120px] min-[840px]:hidden">
+            <img
+              src="/images/puppy-and-bagel.png"
+              alt="Playful puppy with a bagel"
+              class="w-full"
+            />
+            <figcaption class="font-sans font-light text-sm text-warm-brown mt-2">
+              Jojo, the Bagelwolf puppy
+            </figcaption>
+          </figure>
           <p>
             Bagelwolf is Adam Kiryk, a transplant from Brookline, Massachusetts
             who grew up on northeastern-style bagels. After a career in design
@@ -162,7 +166,7 @@ const featuredBagels = [
   <!-- Signup Form -->
   <section class="grid-container md:py-20">
     <div class="grid-9">
-      <div class="col-span-4 col-start-4">
+      <div class="col-span-9 col-start-1 min-[840px]:col-span-6 min-[840px]:col-start-3 min-[1100px]:col-span-5 min-[1100px]:col-start-4 min-[1320px]:col-span-4">
         <h2 class="text-3xl md:text-3xl font-light text-stone-900">
           Stay updated!
         </h2>
