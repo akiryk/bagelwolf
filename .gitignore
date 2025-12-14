@@ -27,3 +27,6 @@ Thumbs.db
 
 # Design mockups (local reference only)
 mockups/
+
+# Local Netlify folder
+.netlify

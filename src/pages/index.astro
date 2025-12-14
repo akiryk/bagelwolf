@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SignupForm from '../components/SignupForm.astro';
 
 const featuredBagels = [
   { name: 'Plain', image: '/images/bagel-plain.png' },
@@ -178,7 +179,7 @@ const featuredBagels = [
         <h2 class="text-3xl md:text-3xl font-light text-stone-900">
           Don't miss a drop!
         </h2>
-        <div class="ml-embedded" data-form="37scIv"></div>
+        <SignupForm />
       </div>
     </div>
   </section>

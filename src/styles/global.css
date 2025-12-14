@@ -82,7 +82,3 @@
   outline: none;
 }
 
-.ml-form-embedWrapper .ml-form-embedBody {
-  /* Annoyingly, mailerlite doesn't let you modify padding so we need to override with important */
-  padding: 0 !important;
-}

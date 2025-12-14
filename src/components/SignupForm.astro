@@ -1,0 +1,115 @@
+---
+// Custom signup form that submits to MailerLite via Netlify function
+// Works reliably with Astro view transitions
+---
+
+<form id="signup-form" class="signup-form mt-4">
+  <p class="text-stone-600 mb-4">Get notified when products are ready.</p>
+
+  <div class="flex flex-col gap-4">
+    <input
+      type="email"
+      name="email"
+      id="signup-email"
+      placeholder="Email"
+      required
+      class="w-full px-4 py-3 border border-stone-300 rounded focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent"
+    />
+
+    <button
+      type="submit"
+      class="w-full px-6 py-3 bg-brand text-white font-medium rounded hover:bg-brand-dark transition-colors focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+    >
+      <span class="button-text">Bagel Me!</span>
+      <span class="button-loading hidden">Subscribing...</span>
+    </button>
+  </div>
+
+  <div id="form-message" class="mt-4 text-sm hidden" role="alert"></div>
+</form>
+
+<script>
+  function initSignupForm() {
+    const form = document.getElementById('signup-form');
+    if (!form) return;
+
+    // Remove any existing listeners by cloning
+    const newForm = form.cloneNode(true);
+    form.parentNode?.replaceChild(newForm, form);
+
+    newForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const emailInput = newForm.querySelector(
+        '#signup-email'
+      ) as HTMLInputElement;
+      const submitBtn = newForm.querySelector(
+        'button[type="submit"]'
+      ) as HTMLButtonElement;
+      const buttonText = newForm.querySelector('.button-text') as HTMLElement;
+      const buttonLoading = newForm.querySelector(
+        '.button-loading'
+      ) as HTMLElement;
+      const messageEl = newForm.querySelector('#form-message') as HTMLElement;
+
+      const email = emailInput?.value?.trim();
+
+      if (!email) return;
+
+      // Show loading state
+      submitBtn.disabled = true;
+      buttonText.classList.add('hidden');
+      buttonLoading.classList.remove('hidden');
+      messageEl.classList.add('hidden');
+
+      try {
+        const response = await fetch('/.netlify/functions/subscribe', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          // Success
+          messageEl.textContent = 'Thanks for subscribing!';
+          messageEl.classList.remove('hidden', 'text-red-600');
+          messageEl.classList.add('text-green-600');
+          emailInput.value = '';
+        } else {
+          // Error from server
+          messageEl.textContent =
+            data.error || 'Something went wrong. Please try again.';
+          messageEl.classList.remove('hidden', 'text-green-600');
+          messageEl.classList.add('text-red-600');
+        }
+      } catch (error) {
+        // Network error
+        messageEl.textContent = 'Connection error. Please try again.';
+        messageEl.classList.remove('hidden', 'text-green-600');
+        messageEl.classList.add('text-red-600');
+      } finally {
+        // Reset button state
+        submitBtn.disabled = false;
+        buttonText.classList.remove('hidden');
+        buttonLoading.classList.add('hidden');
+      }
+    });
+  }
+
+  // Initialize on page load
+  initSignupForm();
+
+  // Re-initialize after view transitions
+  document.addEventListener('astro:after-swap', initSignupForm);
+</script>
+
+<style>
+  .signup-form input::placeholder {
+    color: var(--color-brand);
+    opacity: 0.7;
+  }
+</style>
