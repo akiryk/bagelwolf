@@ -74,6 +74,83 @@ Claude Code should keep the following conventions:
 - `bagel-wolf-logo-80.jpg` — compressed logo
 - `bagel-wolf-logo.png` — original logo
 
+## Grid + Breakpoints
+
+Breakpoints (Tailwind v4 CSS-first config)
+
+We use Tailwind v4 with breakpoints defined via @theme in src/styles/global.css (no tailwind.config.\*).
+
+Do not introduce new breakpoint definitions or assume Tailwind defaults.
+
+Current breakpoints:
+sm: 640px (Tailwind default)
+md: 840px
+lg: 1100px
+xl: 1320px
+
+When writing responsive utilities, md:, lg:, and xl: correspond to the values above.
+
+**Custom grid system**
+
+Layout uses a custom grid wrapper pattern:
+`.grid-container` (centering / max width)
+`.grid-9` (a 9-column grid)
+
+Grid children use Tailwind’s `col-span-*` and `col-start-*` utilities.
+
+**Critical rule: always “lock” grid placement at larger breakpoints**
+CSS Grid auto-placement can shift elements unexpectedly when spans change across breakpoints. Whenever a block:
+
+- changes col-span-\* at md, lg, or xl, and
+- must remain aligned with other blocks,
+
+always specify col-start-\* explicitly at the same breakpoints.
+
+✅ Good (locked placement):
+
+<div class="col-span-9 col-start-1
+            md:col-span-6 md:col-start-4
+            lg:col-span-5 lg:col-start-4
+            xl:col-span-4 xl:col-start-4">
+  ...
+</div>
+
+❌ Risky (auto-placement may shift at xl):
+
+<div class="col-span-9 col-start-1
+            md:col-span-6 md:col-start-4
+            lg:col-span-5 lg:col-start-4
+            xl:col-span-4">
+  ...
+</div>
+
+Rule of thumb for alignment
+
+If two sections should align at large sizes, they must share the same col-start-_ and compatible col-span-_ values at lg and xl.
+
+Example: Story section and Signup section aligned on wide screens:
+
+<!-- Story -->
+<div class="... lg:col-start-4 xl:col-start-4">...</div>
+
+<!-- Signup -->
+<div class="... lg:col-start-4 xl:col-start-4">...</div>
+
+How to verify breakpoints are actually applied
+
+If there’s any doubt, verify against compiled CSS output:
+
+npm run build
+grep -R "@media(min-width:1100px)" dist/\_astro/_.css | head
+grep -R "@media(min-width:840px)" dist/\_astro/_.css | head
+grep -R "@media(min-width:1320px)" dist/\_astro/\*.css | head
+
+You should see .md\:_ under 840, .lg\:_ under 1100, .xl\:\* under 1320.
+
+Don’t “refactor” breakpoints or grid abstractions without explicit request
+
+Avoid broad changes like “cleaning up breakpoints” or changing grid semantics. Make the smallest possible change to achieve the requested layout behavior, and keep diffs tight.
+
 ## Summary
 
 Claude Code should:

@@ -2,10 +2,10 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const featuredBagels = [
-  { name: 'Everything', description: 'Sesame, poppy, garlic, onion, and salt' },
-  { name: 'Sesame', description: 'Topped with toasted sesame seeds' },
-  { name: 'Plain', description: 'Classic sourdough bagel' },
-  { name: 'Pumpernickel', description: 'Dark rye with cocoa and molasses' },
+  { name: 'Plain', image: '/images/bagel-plain.png' },
+  { name: 'Everything', image: '/images/bagel-everything.png' },
+  { name: 'Onion', image: '/images/bagel-onion.png' },
+  { name: 'Pumpernickel', image: '/images/bagel-pumpernickel.png' },
 ];
 ---
 
@@ -36,7 +36,7 @@ const featuredBagels = [
   </section>
 
   <!-- Mobile: single combined hero image -->
-  <section class="md:hidden relative">
+  <section class="md:hidden relative mb-6 md:mb-0">
     <img
       src="/images/hero-sm.png"
       alt="Freshly baked sourdough bagels and artisan bread"
@@ -48,7 +48,7 @@ const featuredBagels = [
         href="https://www.hotplate.com/bagelwolf"
         target="_blank"
         rel="noopener noreferrer"
-        class="px-8 py-3 bg-brand text-white text-lg font-medium tracking-wider rounded border-1 border-white hover:bg-brand-dark transition-colors focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
+        class="px-8 py-3 bg-brand text-white text-lg font-medium tracking-wider rounded border border-white hover:bg-brand-dark transition-colors focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
       >
         ORDER NOW
       </a>
@@ -111,8 +111,10 @@ const featuredBagels = [
   <!-- Short Story Section -->
   <section class="grid-container mt-4 overflow-visible">
     <div class="grid-9">
-      <!-- Puppy image in grid column (hidden at <840px) -->
-      <div class="hidden min-[840px]:block col-span-2 col-start-1 min-[1100px]:col-span-1 min-[1100px]:col-start-3 overflow-visible">
+      <!-- Puppy image in grid column (hidden below md breakpoint) -->
+      <div
+        class="hidden md:block col-span-2 col-start-2 lg:col-span-1 lg:col-start-3 overflow-visible"
+      >
         <figure
           class="parallax-image-up"
           data-speed="0.25"
@@ -128,21 +130,25 @@ const featuredBagels = [
           </figcaption>
         </figure>
       </div>
-      <div class="col-span-9 col-start-1 min-[840px]:col-span-6 min-[840px]:col-start-3 min-[1100px]:col-span-5 min-[1100px]:col-start-4 min-[1320px]:col-span-4">
+      <div
+        class="col-span-9 col-start-1 md:col-span-6 md:col-start-4 lg:col-span-5 lg:col-start-4 xl:col-span-4 xl:col-start-4"
+      >
         <h2 class="text-3xl md:text-4xl font-light text-stone-900 mb-8">
           The Bagelwolf Story
         </h2>
         <div
           class="font-serif font-medium text-stone-600 text-xl leading-relaxed space-y-6"
         >
-          <!-- Floated puppy for <840px screens -->
-          <figure class="float-left mr-6 mb-4 w-[120px] min-[840px]:hidden">
+          <!-- Floated puppy for mobile (below md breakpoint) -->
+          <figure class="float-left mr-6 mb-4 w-[120px] md:hidden">
             <img
               src="/images/puppy-and-bagel.png"
               alt="Playful puppy with a bagel"
               class="w-full"
             />
-            <figcaption class="font-sans font-light text-sm text-warm-brown mt-2">
+            <figcaption
+              class="font-sans font-light text-sm text-warm-brown mt-2"
+            >
               Jojo, the Bagelwolf puppy
             </figcaption>
           </figure>
@@ -164,11 +170,13 @@ const featuredBagels = [
   </section>
 
   <!-- Signup Form -->
-  <section class="grid-container md:py-20">
+  <section class="grid-container py-10">
     <div class="grid-9">
-      <div class="col-span-9 col-start-1 min-[840px]:col-span-6 min-[840px]:col-start-3 min-[1100px]:col-span-5 min-[1100px]:col-start-4 min-[1320px]:col-span-4">
+      <div
+        class="col-span-9 col-start-1 md:col-span-6 md:col-start-4 lg:col-span-5 lg:col-start-4 xl:col-span-4 xl:col-start-4"
+      >
         <h2 class="text-3xl md:text-3xl font-light text-stone-900">
-          Stay updated!
+          Don't miss a drop!
         </h2>
         <div class="ml-embedded" data-form="37scIv"></div>
       </div>
@@ -176,32 +184,42 @@ const featuredBagels = [
   </section>
 
   <!-- Featured Bagels Section -->
-  <section class="bg-stone-50 py-16 md:py-20">
-    <div class="max-w-5xl mx-auto px-4">
-      <h2
-        class="font-serif text-3xl md:text-4xl font-medium text-stone-900 mb-10 text-center"
-      >
-        Our Bagels
-      </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+  <section class="py-8">
+    <div class="grid-container">
+      <div class="grid-9">
+        <h2
+          class="col-start-2 col-span-8 text-3xl md:text-3xl font-light text-stone-900 mb-10"
+        >
+          The Bagels
+        </h2>
+      </div>
+      <div class="grid-9">
         {
-          featuredBagels.map((bagel) => (
-            <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
-              <h3 class="text-lg font-semibold text-stone-900 mb-2">
+          featuredBagels.map((bagel, index) => (
+            <figure
+              class:list={['col-span-2', index === 0 ? 'col-start-2' : '']}
+            >
+              <img
+                src={bagel.image}
+                alt={`${bagel.name} bagel`}
+                class="w-full h-auto rounded"
+              />
+              <figcaption class="font-sans font-light text-sm text-warm-brown mt-2 text-center">
                 {bagel.name}
-              </h3>
-              <p class="text-stone-600 text-sm">{bagel.description}</p>
-            </div>
+              </figcaption>
+            </figure>
           ))
         }
       </div>
-      <div class="text-center mt-10">
-        <a
-          href="/bagels"
-          class="text-brand font-medium hover:text-brand-light hover:underline transition-colors"
-        >
-          See all bagels &rarr;
-        </a>
+      <div class="grid-9 mt-10">
+        <div class="col-start-2 col-span-8">
+          <a
+            href="/bagels"
+            class="text-brand font-medium hover:text-brand-light hover:underline transition-colors"
+          >
+            See all bagels &rarr;
+          </a>
+        </div>
       </div>
     </div>
   </section>

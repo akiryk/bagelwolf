@@ -7,6 +7,16 @@
   --color-brand-light: #f26a1d;
   --color-brand-dark: #b84407;
   --color-warm-brown: #A08067;
+
+  /* Custom breakpoints
+     sm: 640px (default) - small grids
+     md: 840px - mobile/desktop nav & hero switch, content grid starts
+     lg: 1100px - medium content width, puppy in grid col 3
+     xl: 1320px - wide content width (4 columns)
+  */
+  --breakpoint-md: 840px;
+  --breakpoint-lg: 1100px;
+  --breakpoint-xl: 1320px;
 }
 
 /* 9-Column Grid System */
