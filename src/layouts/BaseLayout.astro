@@ -129,8 +129,8 @@ function isActive(href: string): boolean {
             <source src="/video/animation-3-step.mp4" type="video/mp4" />
           </video>
         </a>
-        <p class="font-serif text-warm-brown text-lg tracking-wide">
-          Handrolled Sourdough Bagels & Artisanal Sourdough Breads
+        <p class="font-serif text-warm-brown text-md tracking-wide">
+          Artisanal Sourdough Bagels & Breads
         </p>
         <!-- Location text - mobile only -->
         <p
@@ -295,32 +295,35 @@ function isActive(href: string): boolean {
       <slot />
     </main>
 
-    <footer class="bg-stone-800 text-stone-200 py-12">
-      <div class="max-w-5xl mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Brand & Location -->
-          <div>
-            <h2 class="font-serif text-xl text-white mb-2">BagelWolf</h2>
-            <p class="text-stone-400">Durango, Colorado</p>
+    <footer
+      class="py-12 text-stone-700"
+      style="background-color: #ebe5df; background-image: url('/images/footer-puppy.png'); background-position: top left; background-repeat: no-repeat; background-size: 420px auto;"
+    >
+      <div class="grid-container">
+        <div class="grid-9">
+          <!-- Brand & Location - columns 4-5 -->
+          <div class="col-span-2 col-start-4">
+            <h2 class="font-serif text-xl text-stone-900 mb-2">BagelWolf</h2>
+            <p class="text-stone-600">Durango, Colorado</p>
           </div>
 
-          <!-- Contact -->
-          <div>
-            <h2 class="font-serif text-xl text-white mb-2">Contact</h2>
-            <p class="text-stone-400">
+          <!-- Contact - columns 6-7 -->
+          <div class="col-span-2 col-start-6">
+            <h2 class="font-serif text-xl text-stone-900 mb-2">Contact</h2>
+            <p class="text-stone-600">
               <a
                 href="mailto:bagelwolfbakery@gmail.com"
-                class="hover:text-white transition-colors"
+                class="hover:text-stone-900 transition-colors"
               >
                 bagelwolfbakery@gmail.com
               </a>
             </p>
-            <p class="text-stone-400 mt-1">
+            <p class="text-stone-600 mt-1">
               <a
                 href="https://instagram.com/bagelwolfbakery"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="hover:text-white transition-colors"
+                class="hover:text-stone-900 transition-colors"
               >
                 @bagelwolfbakery
               </a>
@@ -328,10 +331,10 @@ function isActive(href: string): boolean {
           </div>
         </div>
 
-        <div
-          class="mt-8 pt-8 border-t border-stone-700 text-center text-stone-500 text-sm"
-        >
-          &copy; {new Date().getFullYear()} BagelWolf. All rights reserved.
+        <div class="grid-9 mt-8 pt-8 border-t border-stone-400">
+          <p class="col-span-4 col-start-4 text-stone-500 text-sm">
+            &copy; {new Date().getFullYear()} BagelWolf. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

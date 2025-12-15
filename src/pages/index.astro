@@ -8,6 +8,13 @@ const featuredBagels = [
   { name: 'Onion', image: '/images/bagel-onion.png' },
   { name: 'Pumpernickel', image: '/images/bagel-pumpernickel.png' },
 ];
+
+const featuredBreads = [
+  { name: 'Olive Rosemary', image: '/images/bread-olive.png' },
+  { name: 'Rugbrød', image: '/images/bread-rugbrod.png' },
+  { name: 'Walnut', image: '/images/bread-walnut.png' },
+  { name: 'Tartine', image: '/images/bread-tartine.png' },
+];
 ---
 
 <BaseLayout
@@ -111,47 +118,48 @@ const featuredBagels = [
 
   <!-- Short Story Section -->
   <section class="grid-container mt-4 overflow-visible">
-    <div class="grid-9">
-      <!-- Puppy image in grid column (hidden below md breakpoint) -->
-      <div
-        class="hidden md:block col-span-2 col-start-2 lg:col-span-1 lg:col-start-3 overflow-visible"
+    <div class="grid-9 grid-rows-[auto_1fr]">
+      <!-- Heading in row 1 (desktop only) -->
+      <h2
+        class="hidden md:block row-start-1 md:col-span-6 md:col-start-4 lg:col-span-5 lg:col-start-4 xl:col-span-4 xl:col-start-4 text-3xl md:text-4xl font-light text-stone-900"
       >
-        <figure
-          class="parallax-image-up"
-          data-speed="0.25"
-          data-start-offset="250"
-        >
+        The Bagelwolf Story
+      </h2>
+
+      <!-- Image in row 2 (hidden below md breakpoint) -->
+      <div
+        class="hidden md:block col-span-2 col-start-2 row-start-2 lg:col-span-1 lg:col-start-3 overflow-visible"
+      >
+        <figure>
           <img
-            src="/images/puppy-and-bagel.png"
-            alt="Playful puppy with a bagel"
-            class="w-full"
+            src="/images/adam-baking.png"
+            alt="Adam baking"
+            class="w-full rounded"
           />
           <figcaption class="font-sans font-light text-sm text-warm-brown mt-2">
-            Jojo, the Bagelwolf puppy
+            Mock temporary image
           </figcaption>
         </figure>
       </div>
+
+      <!-- Body content - full width on mobile (row 1), aligned with image on desktop (row 2) -->
       <div
-        class="col-span-9 col-start-1 md:col-span-6 md:col-start-4 lg:col-span-5 lg:col-start-4 xl:col-span-4 xl:col-start-4"
+        class="col-span-9 col-start-1 md:col-span-6 md:col-start-4 md:row-start-2 lg:col-span-5 lg:col-start-4 xl:col-span-4 xl:col-start-4"
       >
-        <h2 class="text-3xl md:text-4xl font-light text-stone-900 mb-8">
+        <!-- Mobile heading -->
+        <h2 class="md:hidden text-3xl font-light text-stone-900 mb-8">
           The Bagelwolf Story
         </h2>
         <div
           class="font-serif font-medium text-stone-600 text-xl leading-relaxed space-y-6"
         >
-          <!-- Floated puppy for mobile (below md breakpoint) -->
+          <!-- Floated image for mobile (below md breakpoint) -->
           <figure class="float-left mr-6 mb-4 w-[120px] md:hidden">
             <img
-              src="/images/puppy-and-bagel.png"
-              alt="Playful puppy with a bagel"
+              src="/images/adam-baking.png"
+              alt="Adam baking"
               class="w-full"
             />
-            <figcaption
-              class="font-sans font-light text-sm text-warm-brown mt-2"
-            >
-              Jojo, the Bagelwolf puppy
-            </figcaption>
           </figure>
           <p>
             Bagelwolf is Adam Kiryk, a transplant from Brookline, Massachusetts
@@ -191,7 +199,7 @@ const featuredBagels = [
         <h2
           class="col-start-2 col-span-8 text-3xl md:text-3xl font-light text-stone-900 mb-10"
         >
-          The Bagels
+          Handrolled Sourdough Bagels
         </h2>
       </div>
       <div class="grid-9">
@@ -225,37 +233,43 @@ const featuredBagels = [
     </div>
   </section>
 
-  <!-- Learn More Section -->
-  <section class="py-16 md:py-20">
-    <div class="max-w-5xl mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <a
-          href="/bagels"
-          class="block p-8 bg-stone-100 rounded-lg hover:bg-stone-200 transition-colors group"
+  <!-- Featured Breads Section -->
+  <section class="py-8">
+    <div class="grid-container">
+      <div class="grid-9">
+        <h2
+          class="col-start-2 col-span-8 text-3xl md:text-3xl font-light text-stone-900 mb-10"
         >
-          <h3
-            class="font-serif text-2xl font-medium text-stone-900 mb-3 group-hover:text-brand"
+          Sourdough Breads
+        </h2>
+      </div>
+      <div class="grid-9">
+        {
+          featuredBreads.map((bread, index) => (
+            <figure
+              class:list={['col-span-2', index === 0 ? 'col-start-2' : '']}
+            >
+              <img
+                src={bread.image}
+                alt={`${bread.name} bread`}
+                class="w-full h-auto rounded"
+              />
+              <figcaption class="font-sans font-light text-sm text-warm-brown mt-2 text-center">
+                {bread.name}
+              </figcaption>
+            </figure>
+          ))
+        }
+      </div>
+      <div class="grid-9 mt-10">
+        <div class="col-start-2 col-span-8">
+          <a
+            href="/bread"
+            class="text-brand font-medium hover:text-brand-light hover:underline transition-colors"
           >
-            Explore Our Bagels
-          </h3>
-          <p class="text-stone-600">
-            From classic sesame to dark pumpernickel — discover our full lineup.
-          </p>
-        </a>
-        <a
-          href="/bread"
-          class="block p-8 bg-stone-100 rounded-lg hover:bg-stone-200 transition-colors group"
-        >
-          <h3
-            class="font-serif text-2xl font-medium text-stone-900 mb-3 group-hover:text-brand"
-          >
-            Artisan Breads
-          </h3>
-          <p class="text-stone-600">
-            Country sourdough, olive rosemary, Danish rugbrød — and when to get
-            them.
-          </p>
-        </a>
+            See all breads &rarr;
+          </a>
+        </div>
       </div>
     </div>
   </section>
