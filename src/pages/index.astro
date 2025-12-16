@@ -197,7 +197,7 @@ const featuredBreads = [
     <div class="grid-container">
       <div class="grid-9">
         <h2
-          class="col-start-2 col-span-8 text-3xl md:text-3xl font-light text-stone-900 mb-10"
+          class="col-start-1 md:col-start-2 col-span-8 text-3xl font-light text-stone-900 mb-5 md:mb-8"
         >
           Handrolled Sourdough Bagels
         </h2>
@@ -206,7 +206,11 @@ const featuredBreads = [
         {
           featuredBagels.map((bagel, index) => (
             <figure
-              class:list={['col-span-2', index === 0 ? 'col-start-2' : '']}
+              class:list={[
+                'col-span-3 md:col-span-2',
+                index === 0 ? 'md:col-start-2' : '',
+                index === 3 ? 'hidden md:block' : '',
+              ]}
             >
               <img
                 src={bagel.image}
@@ -220,8 +224,8 @@ const featuredBreads = [
           ))
         }
       </div>
-      <div class="grid-9 mt-10">
-        <div class="col-start-2 col-span-8">
+      <div class="grid-9 mt-4">
+        <div class="col-start-1 md:col-start-2 col-span-8">
           <a
             href="/bagels"
             class="text-brand font-medium hover:text-brand-light hover:underline transition-colors"
@@ -238,7 +242,7 @@ const featuredBreads = [
     <div class="grid-container">
       <div class="grid-9">
         <h2
-          class="col-start-2 col-span-8 text-3xl md:text-3xl font-light text-stone-900 mb-10"
+          class="col-start-1 md:col-start-2 col-span-8 text-3xl font-light text-stone-900 mb-5 md:mb-8"
         >
           Sourdough Breads
         </h2>
@@ -247,7 +251,11 @@ const featuredBreads = [
         {
           featuredBreads.map((bread, index) => (
             <figure
-              class:list={['col-span-2', index === 0 ? 'col-start-2' : '']}
+              class:list={[
+                'col-span-3 md:col-span-2',
+                index === 0 ? 'md:col-start-2' : '',
+                index === 3 ? 'hidden md:block' : '',
+              ]}
             >
               <img
                 src={bread.image}
@@ -261,8 +269,8 @@ const featuredBreads = [
           ))
         }
       </div>
-      <div class="grid-9 mt-10">
-        <div class="col-start-2 col-span-8">
+      <div class="grid-9 mt-4">
+        <div class="col-start-1 md:col-start-2 col-span-8">
           <a
             href="/bread"
             class="text-brand font-medium hover:text-brand-light hover:underline transition-colors"

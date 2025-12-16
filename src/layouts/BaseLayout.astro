@@ -295,20 +295,16 @@ function isActive(href: string): boolean {
       <slot />
     </main>
 
-    <footer
-      class="py-12 text-stone-700"
-      style="background-color: #ebe5df; background-image: url('/images/footer-puppy.png'); background-position: top left; background-repeat: no-repeat; background-size: 420px auto;"
-    >
-      <div class="grid-container">
-        <div class="grid-9">
-          <!-- Brand & Location - columns 4-5 -->
-          <div class="col-span-2 col-start-4">
+    <footer class="footer-bg flex flex-col text-stone-700 md:h-[380px]">
+      <!-- Main content - near top -->
+      <div class="grid-container pt-8 md:pt-12">
+        <!-- Stacked layout with centered puppy (below 840px) -->
+        <div class="md:hidden flex flex-col items-center text-center">
+          <div class="mb-6">
             <h2 class="font-serif text-xl text-stone-900 mb-2">BagelWolf</h2>
             <p class="text-stone-600">Durango, Colorado</p>
           </div>
-
-          <!-- Contact - columns 6-7 -->
-          <div class="col-span-2 col-start-6">
+          <div class="mb-6">
             <h2 class="font-serif text-xl text-stone-900 mb-2">Contact</h2>
             <p class="text-stone-600">
               <a
@@ -329,10 +325,53 @@ function isActive(href: string): boolean {
               </a>
             </p>
           </div>
+          <!-- Centered puppy image -->
+          <img
+            src="/images/puppy-and-bagel.png"
+            alt="Jojo the puppy with a bagel"
+            class="w-[150px] h-auto mb-4"
+          />
         </div>
 
-        <div class="grid-9 mt-8 pt-8 border-t border-stone-400">
-          <p class="col-span-4 col-start-4 text-stone-500 text-sm">
+        <!-- Desktop: grid layout (840px+) -->
+        <div class="hidden md:block">
+          <div class="grid-9">
+            <!-- Brand & Location -->
+            <div class="col-span-2 col-start-4">
+              <h2 class="font-serif text-xl text-stone-900 mb-2">BagelWolf</h2>
+              <p class="text-stone-600">Durango, Colorado</p>
+            </div>
+
+            <!-- Contact -->
+            <div class="col-span-2 col-start-6">
+              <h2 class="font-serif text-xl text-stone-900 mb-2">Contact</h2>
+              <p class="text-stone-600">
+                <a
+                  href="mailto:bagelwolfbakery@gmail.com"
+                  class="hover:text-stone-900 transition-colors"
+                >
+                  bagelwolfbakery@gmail.com
+                </a>
+              </p>
+              <p class="text-stone-600 mt-1">
+                <a
+                  href="https://instagram.com/bagelwolfbakery"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-stone-900 transition-colors"
+                >
+                  @bagelwolfbakery
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright - locked to bottom -->
+      <div class="grid-container mt-auto pb-6">
+        <div class="pt-6 border-t border-stone-400">
+          <p class="text-stone-500 text-sm text-center">
             &copy; {new Date().getFullYear()} BagelWolf. All rights reserved.
           </p>
         </div>

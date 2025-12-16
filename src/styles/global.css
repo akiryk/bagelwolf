@@ -82,3 +82,30 @@
   outline: none;
 }
 
+/* Footer background - responsive puppy image */
+.footer-bg {
+  background-color: #ebe5df;
+  background-image: none;
+}
+
+@media (min-width: 840px) {
+  .footer-bg {
+    background-image: url('/images/footer-puppy.png');
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 280px auto;
+  }
+}
+
+@media (min-width: 1100px) {
+  .footer-bg {
+    background-size: 350px auto;
+  }
+}
+
+@media (min-width: 1320px) {
+  .footer-bg {
+    background-size: 420px auto;
+  }
+}
+
