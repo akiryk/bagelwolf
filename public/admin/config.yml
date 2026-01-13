@@ -11,7 +11,7 @@ collections:
     files:
       - name: 'about'
         label: 'About Page'
-        file: 'src/content/about.md'
+        file: 'src/content/about/index.md'
         fields:
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Image', name: 'image', widget: 'image', required: false }
