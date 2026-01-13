@@ -6,7 +6,7 @@
   --color-brand: #db5009;
   --color-brand-light: #f26a1d;
   --color-brand-dark: #b84407;
-  --color-warm-brown: #A08067;
+  --color-warm-brown: #a08067;
 
   /* Custom breakpoints
      sm: 640px (default) - small grids
@@ -46,7 +46,9 @@
   display: grid;
   /* 5 columns + 4 gutters on left, 4 columns + 4 gutters on right */
   /* Using fr units based on column count: 5fr + half-gutter : 4fr + half-gutter */
-  grid-template-columns: calc(5fr + var(--grid-gutter) / 2) calc(4fr + var(--grid-gutter) / 2);
+  grid-template-columns: calc(5fr + var(--grid-gutter) / 2) calc(
+      4fr + var(--grid-gutter) / 2
+    );
   gap: 0;
 }
 
@@ -108,4 +110,3 @@
     background-size: 420px auto;
   }
 }
-
