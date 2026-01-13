@@ -6,7 +6,7 @@ imageCaption: Mock temporary image (not Adam)
 ---
 Bagelwolf is Adam Kiryk, a transplant from Brookline, Massachusetts
 who grew up on northeastern-style bagels. After a career in design
-and software development, Adam left to pursue his passion for baking sourdough bread.
+and software development, Adam left to pursue his passion for baking sourdough breads.
 
 Every bagel is made with a homemade sourdough starter, hand-rolled
 using the traditional coil technique, and cold-fermented for 24
