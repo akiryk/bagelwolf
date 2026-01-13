@@ -14,4 +14,17 @@ collections:
         file: 'src/content/about.md'
         fields:
           - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Image', name: 'image', widget: 'image', required: false }
+          - {
+              label: 'Image alt text',
+              name: 'imageAlt',
+              widget: 'string',
+              required: false,
+            }
+          - {
+              label: 'Image caption',
+              name: 'imageCaption',
+              widget: 'string',
+              required: false,
+            }
           - { label: 'Body', name: 'body', widget: 'markdown' }
