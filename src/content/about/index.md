@@ -1,6 +1,6 @@
 ---
 title: The Bagelwolf Story
-image: /images/adam-baking.png
+image: /images/bagel3.jpeg
 imageAlt: "Adam baking "
 imageCaption: Mock temporary image (not Adam)
 ---
