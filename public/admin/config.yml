@@ -7,16 +7,11 @@ public_folder: '/images'
 
 collections:
   - name: 'about'
-    label: 'About Section'
-    file: 'src/content/about.md'
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Image', name: 'image', widget: 'image' }
-      - { label: 'Image Alt Text', name: 'imageAlt', widget: 'string' }
-      - {
-          label: 'Image Caption',
-          name: 'imageCaption',
-          widget: 'string',
-          required: false,
-        }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+    label: 'About'
+    files:
+      - name: 'about'
+        label: 'About Page'
+        file: 'src/content/about.md'
+        fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
