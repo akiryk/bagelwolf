@@ -2,7 +2,7 @@
 title: Handrolled Sourdough Bagels
 items:
   - name: Plain
-    image: /images/bagel-plain.png
+    image: /images/plain-400.jpg
   - name: Everything
     image: /images/bagel-everything.png
   - name: Onion
