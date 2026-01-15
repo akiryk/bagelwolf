@@ -123,7 +123,50 @@ This structure may evolve, but simplicity is preferred.
 ## 🌐 Deployment
 
 **Host:** Netlify
+
 **Production URL:** configured via Netlify
+
+## 📝 Content Management
+
+All site content is intended to be managed via **Decap CMS** (formerly Netlify CMS).
+
+Decap provides a browser-based editing interface backed by Git, allowing non-technical updates while preserving a fully versioned content history.
+
+### Accessing the CMS
+
+The admin interface lives at:
+
+https://bagelwolfbakery.com/admin
+
+Authentication is handled via **Netlify Identity**. Only invited users with appropriate roles can log in.
+
+### How content changes work
+
+Decap is a Git-backed CMS. When you save content in the admin UI:
+
+1. Decap commits changes directly to the GitHub repository
+2. The commit triggers a Netlify build
+3. The site is redeployed automatically
+
+This means:
+
+- Content edits **modify the Git repository**
+- Local development branches may become out of sync after CMS edits
+- Developers should `git pull` (or `git pull --rebase`) before pushing local changes
+
+This is expected and intentional.
+
+### Editing content locally (advanced)
+
+While Decap is the preferred interface, content files live in the repository and can still be edited manually by developers when needed.
+
+If you edit content locally and also use Decap:
+
+- Always pull latest changes first
+- Treat Decap as another Git client committing to `main`
+
+Over time, all editable site content should be represented in Decap collections.
+v
 
 ### Why Netlify?
 
