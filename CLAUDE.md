@@ -63,6 +63,40 @@ Claude Code should keep the following conventions:
 - Images should be optimized on import when practical
 - Documentation lives in `docs/`
 
+## Content Management (Decap CMS)
+
+This project is moving toward **Decap CMS as the canonical interface for all site content**.
+
+Claude Code should assume that:
+
+- Human-editable content (copy, images, captions, page sections) should live in **Decap-managed content files**
+- Astro components and pages should **consume content**, not own it
+- “Making content dynamic” means **CMS-managed**, not JS-driven or hardcoded
+
+### Rules of thumb
+
+When asked to:
+
+- “Make this editable”
+- “Move this content out of the component”
+- “Add a new section that marketing can update”
+
+Claude should:
+
+1. Propose or extend a **Decap collection or file**
+2. Define clear frontmatter / fields in `config.yml`
+3. Update Astro code to read from those fields
+4. Avoid introducing content duplication or fallback hardcoding
+
+### Constraints
+
+- Decap content should remain compatible with Astro’s static build
+- Prefer file-based collections (`files:`) for singleton pages
+- Prefer markdown content + frontmatter over JSON unless structure demands otherwise
+- Do not bypass Decap by introducing parallel content systems
+
+If a change would significantly restructure existing content or collections, **ask before proceeding**.
+
 ## When Editing Content
 
 - Maintain brand tone and clarity.

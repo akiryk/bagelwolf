@@ -10,6 +10,46 @@ const about = defineCollection({
   }),
 });
 
+const signup = defineCollection({
+  type: 'content',
+  schema: z.object({
+    heading: z.string(),
+  }),
+});
+
+const featuredBagels = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    items: z.array(
+      z.object({
+        name: z.string(),
+        image: z.string(),
+      })
+    ),
+    ctaText: z.string(),
+    ctaLink: z.string(),
+  }),
+});
+
+const featuredBreads = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    items: z.array(
+      z.object({
+        name: z.string(),
+        image: z.string(),
+      })
+    ),
+    ctaText: z.string(),
+    ctaLink: z.string(),
+  }),
+});
+
 export const collections = {
   about,
+  signup,
+  'featured-bagels': featuredBagels,
+  'featured-breads': featuredBreads,
 };

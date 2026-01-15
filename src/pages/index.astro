@@ -8,19 +8,27 @@ const about = aboutEntries[0];
 const { title, image, imageAlt, imageCaption } = about.data;
 const { Content } = await about.render();
 
-const featuredBagels = [
-  { name: 'Plain', image: '/images/bagel-plain.png' },
-  { name: 'Everything', image: '/images/bagel-everything.png' },
-  { name: 'Onion', image: '/images/bagel-onion.png' },
-  { name: 'Pumpernickel', image: '/images/bagel-pumpernickel.png' },
-];
+const signupEntries = await getCollection('signup');
+const signup = signupEntries[0];
+const { heading: signupHeading } = signup.data;
 
-const featuredBreads = [
-  { name: 'Olive Rosemary', image: '/images/bread-olive.png' },
-  { name: 'Rugbrød', image: '/images/bread-rugbrod.png' },
-  { name: 'Walnut', image: '/images/bread-walnut.png' },
-  { name: 'Tartine', image: '/images/bread-tartine.png' },
-];
+const bagelsEntries = await getCollection('featured-bagels');
+const bagelsSection = bagelsEntries[0];
+const {
+  title: bagelsTitle,
+  items: featuredBagels,
+  ctaText: bagelsCta,
+  ctaLink: bagelsLink,
+} = bagelsSection.data;
+
+const breadsEntries = await getCollection('featured-breads');
+const breadsSection = breadsEntries[0];
+const {
+  title: breadsTitle,
+  items: featuredBreads,
+  ctaText: breadsCta,
+  ctaLink: breadsLink,
+} = breadsSection.data;
 ---
 
 <BaseLayout
@@ -172,7 +180,7 @@ const featuredBreads = [
         class="col-span-9 col-start-1 md:col-span-6 md:col-start-4 lg:col-span-5 lg:col-start-4 xl:col-span-4 xl:col-start-4"
       >
         <h2 class="text-3xl md:text-3xl font-light text-stone-900">
-          Don't miss a drop!
+          {signupHeading}
         </h2>
         <SignupForm />
       </div>
@@ -186,7 +194,7 @@ const featuredBreads = [
         <h2
           class="col-start-1 md:col-start-2 col-span-8 text-3xl font-light text-stone-900 mb-5 md:mb-8"
         >
-          Handrolled Sourdough Bagels
+          {bagelsTitle}
         </h2>
       </div>
       <div class="grid-9">
@@ -214,10 +222,10 @@ const featuredBreads = [
       <div class="grid-9 mt-4">
         <div class="col-start-1 md:col-start-2 col-span-8">
           <a
-            href="/bagels"
+            href={bagelsLink}
             class="text-brand font-medium hover:text-brand-light hover:underline transition-colors"
           >
-            See all bagels &rarr;
+            {bagelsCta} &rarr;
           </a>
         </div>
       </div>
@@ -231,7 +239,7 @@ const featuredBreads = [
         <h2
           class="col-start-1 md:col-start-2 col-span-8 text-3xl font-light text-stone-900 mb-5 md:mb-8"
         >
-          Sourdough Breads
+          {breadsTitle}
         </h2>
       </div>
       <div class="grid-9">
@@ -259,10 +267,10 @@ const featuredBreads = [
       <div class="grid-9 mt-4">
         <div class="col-start-1 md:col-start-2 col-span-8">
           <a
-            href="/bread"
+            href={breadsLink}
             class="text-brand font-medium hover:text-brand-light hover:underline transition-colors"
           >
-            See all breads &rarr;
+            {breadsCta} &rarr;
           </a>
         </div>
       </div>

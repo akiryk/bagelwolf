@@ -28,3 +28,46 @@ collections:
               required: false,
             }
           - { label: 'Body', name: 'body', widget: 'markdown' }
+
+  - name: 'signup'
+    label: 'Signup Section'
+    files:
+      - name: 'signup'
+        label: 'Signup Section'
+        file: 'src/content/signup/index.md'
+        fields:
+          - { label: 'Heading', name: 'heading', widget: 'string' }
+
+  - name: 'featured-bagels'
+    label: 'Featured Bagels'
+    files:
+      - name: 'featured-bagels'
+        label: 'Featured Bagels Section'
+        file: 'src/content/featured-bagels/index.md'
+        fields:
+          - { label: 'Section Title', name: 'title', widget: 'string' }
+          - label: 'Featured Items'
+            name: 'items'
+            widget: 'list'
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - { label: 'Image', name: 'image', widget: 'image' }
+          - { label: 'CTA Text', name: 'ctaText', widget: 'string', hint: 'Arrow will be added automatically' }
+          - { label: 'CTA Link', name: 'ctaLink', widget: 'string' }
+
+  - name: 'featured-breads'
+    label: 'Featured Breads'
+    files:
+      - name: 'featured-breads'
+        label: 'Featured Breads Section'
+        file: 'src/content/featured-breads/index.md'
+        fields:
+          - { label: 'Section Title', name: 'title', widget: 'string' }
+          - label: 'Featured Items'
+            name: 'items'
+            widget: 'list'
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - { label: 'Image', name: 'image', widget: 'image' }
+          - { label: 'CTA Text', name: 'ctaText', widget: 'string', hint: 'Arrow will be added automatically' }
+          - { label: 'CTA Link', name: 'ctaLink', widget: 'string' }
