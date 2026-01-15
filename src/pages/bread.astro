@@ -1,6 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { breads, schedule } from '../data/breads';
+import { getCollection } from 'astro:content';
+
+const orderButtonEntries = await getCollection('order-button');
+const orderButton = orderButtonEntries[0];
+const { url: orderButtonUrl } = orderButton.data;
 ---
 
 <BaseLayout
@@ -90,7 +95,7 @@ import { breads, schedule } from '../data/breads';
         Our breads sell out fast. Order ahead to guarantee yours.
       </p>
       <a
-        href="https://www.hotplate.com/bagelwolf"
+        href={orderButtonUrl}
         target="_blank"
         rel="noopener noreferrer"
         class="inline-block px-8 py-4 bg-brand text-white text-lg font-semibold rounded hover:bg-brand-dark transition-colors focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"

@@ -71,3 +71,13 @@ collections:
               - { label: 'Image', name: 'image', widget: 'image' }
           - { label: 'CTA Text', name: 'ctaText', widget: 'string', hint: 'Arrow will be added automatically' }
           - { label: 'CTA Link', name: 'ctaLink', widget: 'string' }
+
+  - name: 'order-button'
+    label: 'Order Button'
+    files:
+      - name: 'order-button'
+        label: 'Order Button (Site-wide)'
+        file: 'src/content/order-button/index.md'
+        fields:
+          - { label: 'Button Text', name: 'text', widget: 'string' }
+          - { label: 'Button URL', name: 'url', widget: 'string' }

@@ -47,9 +47,18 @@ const featuredBreads = defineCollection({
   }),
 });
 
+const orderButton = defineCollection({
+  type: 'content',
+  schema: z.object({
+    text: z.string(),
+    url: z.string(),
+  }),
+});
+
 export const collections = {
   about,
   signup,
   'featured-bagels': featuredBagels,
   'featured-breads': featuredBreads,
+  'order-button': orderButton,
 };

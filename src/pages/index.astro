@@ -29,6 +29,10 @@ const {
   ctaText: breadsCta,
   ctaLink: breadsLink,
 } = breadsSection.data;
+
+const orderButtonEntries = await getCollection('order-button');
+const orderButton = orderButtonEntries[0];
+const { text: orderButtonText, url: orderButtonUrl } = orderButton.data;
 ---
 
 <BaseLayout
@@ -64,15 +68,15 @@ const {
       alt="Freshly baked sourdough bagels and artisan bread"
       class="w-full h-auto object-cover"
     />
-    <!-- ORDER NOW button centered -->
+    <!-- Mobile Only (see above section): ORDER NOW button centered -->
     <div class="absolute inset-0 flex items-center justify-center">
       <a
-        href="https://www.hotplate.com/bagelwolf"
+        href={orderButtonUrl}
         target="_blank"
         rel="noopener noreferrer"
         class="px-8 py-3 bg-brand text-white text-lg font-medium tracking-wider rounded border border-white hover:bg-brand-dark transition-colors focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
       >
-        ORDER NOW
+        {orderButtonText}
       </a>
     </div>
   </section>
