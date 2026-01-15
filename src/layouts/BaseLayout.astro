@@ -42,6 +42,13 @@ function isActive(href: string): boolean {
   }
   return currentPath.startsWith(href);
 }
+
+function navLinkClasses(href: string): string {
+  const base = 'text-2xl tracking-wider transition-colors';
+  return isActive(href)
+    ? `${base} font-bold text-stone-900`
+    : `${base} text-stone-600 hover:text-stone-900`;
+}
 ---
 
 <html lang="en">
@@ -157,9 +164,10 @@ function isActive(href: string): boolean {
       <nav class="hidden md:block border-t border-b border-stone-200">
         <!-- Desktop nav with true center alignment, respects grid margins -->
         <div
-          class="grid grid-cols-3 items-center mx-auto py-3"
-          style="padding-left: var(--grid-margin); padding-right: var(--grid-margin);"
+          <div
+          class="grid grid-cols-3 items-center mx-auto py-3 px-[var(--grid-margin)]"
         >
+          >
           <!-- Left: navigation links -->
           <ul class="flex gap-8 justify-self-start">
             {
@@ -167,12 +175,7 @@ function isActive(href: string): boolean {
                 <li>
                   <a
                     href={link.href}
-                    class:list={[
-                      'text-sm tracking-wider transition-colors',
-                      isActive(link.href)
-                        ? 'font-bold text-stone-900'
-                        : 'text-stone-600 hover:text-stone-900',
-                    ]}
+                    class={navLinkClasses(link.href)}
                     aria-current={isActive(link.href) ? 'page' : undefined}
                   >
                     {link.label}
@@ -232,12 +235,7 @@ function isActive(href: string): boolean {
             navLinks.map((link) => (
               <a
                 href={link.href}
-                class:list={[
-                  'text-2xl tracking-wider transition-colors',
-                  isActive(link.href)
-                    ? 'font-bold text-stone-900'
-                    : 'text-stone-600 hover:text-stone-900',
-                ]}
+                class={navLinkClasses(link.href)}
                 aria-current={isActive(link.href) ? 'page' : undefined}
               >
                 {link.label}
@@ -263,7 +261,16 @@ function isActive(href: string): boolean {
       <slot />
     </main>
 
-    <footer class="footer-bg flex flex-col text-stone-700 md:h-[380px]">
+    <footer
+      class="flex flex-col text-stone-700 md:h-[380px]
+  bg-[#ebe5df]
+  md:bg-[url('/images/footer-puppy.png')]
+  md:bg-left-top
+  md:bg-no-repeat
+  md:bg-[length:280px_auto]
+  lg:bg-[length:350px_auto]
+  xl:bg-[length:420px_auto]"
+    >
       <!-- Main content - near top -->
       <div class="grid-container pt-8 md:pt-12">
         <!-- Stacked layout with centered puppy (below 840px) -->

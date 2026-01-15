@@ -1,25 +1,7 @@
 @import 'tailwindcss';
 
-@theme {
-  --font-sans: 'Open Sans', ui-sans-serif, system-ui, sans-serif;
-  --font-serif: 'Spectral', ui-serif, Georgia, serif;
-  --color-brand: #db5009;
-  --color-brand-light: #f26a1d;
-  --color-brand-dark: #b84407;
-  --color-warm-brown: #a08067;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Spectral:wght@200;300&display=swap');
 
-  /* Custom breakpoints
-     sm: 640px (default) - small grids
-     md: 840px - mobile/desktop nav & hero switch, content grid starts
-     lg: 1100px - medium content width, puppy in grid col 3
-     xl: 1320px - wide content width (4 columns)
-  */
-  --breakpoint-md: 840px;
-  --breakpoint-lg: 1100px;
-  --breakpoint-xl: 1320px;
-}
-
-/* 9-Column Grid System */
 :root {
   --grid-margin: 20px;
   --grid-gutter: 40px;
@@ -40,73 +22,28 @@
   gap: var(--grid-gutter);
 }
 
-/* Hero image split: 5 columns left, 4 columns right
-   Full bleed but respects the grid column boundaries */
-.hero-grid {
-  display: grid;
-  /* 5 columns + 4 gutters on left, 4 columns + 4 gutters on right */
-  /* Using fr units based on column count: 5fr + half-gutter : 4fr + half-gutter */
-  grid-template-columns: calc(5fr + var(--grid-gutter) / 2) calc(
-      4fr + var(--grid-gutter) / 2
-    );
-  gap: 0;
-}
-
-/* Alternative approach using a calculated percentage for the hero split
-   At the boundary between col 5 and col 6:
-   Left side = margin + 5 columns + 4.5 gutters
-   We approximate this with CSS calc based on viewport width */
+/* Hero split layout */
 .hero-split {
   display: flex;
   width: 100%;
 }
 
 .hero-split-left {
-  /* 5 columns worth + half gutter, so split aligns with START of column 6 */
   flex: none;
   width: calc((100% * 5 / 9) + (var(--grid-gutter) / 2));
 }
 
 .hero-split-right {
-  /* 4 columns worth - half gutter */
   flex: none;
   width: calc((100% * 4 / 9) - (var(--grid-gutter) / 2));
 }
 
-/* Ensure visible focus outlines for keyboard navigation */
+/* Focus styles */
 :focus-visible {
-  outline: 2px solid var(--color-brand);
+  outline: 2px solid #db5009;
   outline-offset: 2px;
 }
 
-/* Remove default focus for mouse users but keep for keyboard */
 :focus:not(:focus-visible) {
   outline: none;
-}
-
-/* Footer background - responsive puppy image */
-.footer-bg {
-  background-color: #ebe5df;
-  background-image: none;
-}
-
-@media (min-width: 840px) {
-  .footer-bg {
-    background-image: url('/images/footer-puppy.png');
-    background-position: top left;
-    background-repeat: no-repeat;
-    background-size: 280px auto;
-  }
-}
-
-@media (min-width: 1100px) {
-  .footer-bg {
-    background-size: 350px auto;
-  }
-}
-
-@media (min-width: 1320px) {
-  .footer-bg {
-    background-size: 420px auto;
-  }
 }
