@@ -1,8 +1,8 @@
 ---
 title: The Bagelwolf Story
 image: /images/ak2.jpg
-imageAlt: "Adam baking "
-imageCaption: Mock temporary image (not Adam)
+imageAlt: Adam portrait
+imageCaption: ""
 ---
 Bagelwolf is Adam Kiryk, a transplant from Brookline, Massachusetts
 who grew up on northeastern-style bagels. After a career in design
