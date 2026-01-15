@@ -1,5 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const aboutEntries = await getCollection('about');
+const about = aboutEntries[0];
+const { title } = about.data;
+const { Content } = await about.render();
 
 const values = [
   {
@@ -35,21 +41,10 @@ const values = [
       <h1
         class="font-serif text-4xl md:text-5xl font-medium text-stone-900 mb-8 text-center"
       >
-        About Bagelwolf
+        {title}
       </h1>
       <div class="text-stone-600 text-lg leading-relaxed space-y-6">
-        <p>
-          Bagelwolf is Adam Kiryk, a transplant from Brookline, Massachusetts
-          who grew up on northeastern-style bagels. After a career in design and
-          software development, Adam left to pursue his passion for baking
-          sourdough breads.
-        </p>
-        <p>
-          He's studied bread baking at the San Francisco Baking Institute, and
-          he's staged at bakeries and bagel-making establishments in Boulder,
-          Chicago, and Cambridge. Now he brings that experience to Durango,
-          Colorado.
-        </p>
+        <Content />
       </div>
     </div>
   </section>

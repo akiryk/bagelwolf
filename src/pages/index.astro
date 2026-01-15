@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SignupForm from '../components/SignupForm.astro';
 import { getCollection } from 'astro:content';
+import ParallaxScript from '../components/scripts/ParallaxScript.js';
 
 const aboutEntries = await getCollection('about');
 const about = aboutEntries[0];
@@ -81,58 +82,7 @@ const { text: orderButtonText, url: orderButtonUrl } = orderButton.data;
     </div>
   </section>
 
-  <script>
-    function initParallax() {
-      // Only run parallax on desktop
-      if (window.innerWidth < 768) return;
-
-      const heroImages = document.querySelectorAll('.parallax-image');
-      const upImages = document.querySelectorAll('.parallax-image-up');
-
-      function updateParallax() {
-        const scrollY = window.scrollY;
-
-        // Hero images: move up as you scroll
-        heroImages.forEach((img) => {
-          const speed = parseFloat((img as HTMLElement).dataset.speed) || 0.3;
-          const yOffset = scrollY * speed;
-          (img as HTMLElement).style.transform = `translateY(-${yOffset}px)`;
-        });
-
-        // Upward parallax: starts low, moves up as you scroll
-        upImages.forEach((img) => {
-          const speed = parseFloat((img as HTMLElement).dataset.speed) || 0.4;
-          const startOffset =
-            parseFloat((img as HTMLElement).dataset.startOffset) || 100;
-          const yOffset = startOffset - scrollY * speed;
-          (img as HTMLElement).style.transform = `translateY(${yOffset}px)`;
-        });
-      }
-
-      // Use requestAnimationFrame for smooth scrolling
-      let ticking = false;
-      function onScroll() {
-        if (!ticking) {
-          window.requestAnimationFrame(() => {
-            updateParallax();
-            ticking = false;
-          });
-          ticking = true;
-        }
-      }
-
-      window.addEventListener('scroll', onScroll);
-
-      // Initial call
-      updateParallax();
-    }
-
-    // Run on initial page load
-    initParallax();
-
-    // Re-run after view transitions (for SPA-like navigation)
-    document.addEventListener('astro:after-swap', initParallax);
-  </script>
+  <Fragment set:html={ParallaxScript} />
 
   <!-- About BagelWolf Section -->
   <section class="grid-container mt-4 overflow-visible">
