@@ -1,3 +1,3 @@
 ---
-heading: Don't miss a drop!
+heading: Don't miss out!
 ---
