@@ -1,4 +1,4 @@
 ---
 tagline: Artisanal Sourdough Bagels & Breads
-locationText: Made Fresh in Durango, Colorado
+locationText: Baked Fresh in Durango, Colorado
 ---
