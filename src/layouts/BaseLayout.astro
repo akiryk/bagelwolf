@@ -31,6 +31,10 @@ const orderButtonEntries = await getCollection('order-button');
 const orderButton = orderButtonEntries[0];
 const { text: orderButtonText, url: orderButtonUrl } = orderButton.data;
 
+const siteSettingsEntries = await getCollection('site-settings');
+const siteSettings = siteSettingsEntries[0];
+const { tagline, locationText } = siteSettings.data;
+
 function isActive(href: string): boolean {
   if (href === '/') {
     return currentPath === '/';
@@ -138,13 +142,13 @@ function isActive(href: string): boolean {
         </a>
 
         <p class="font-serif text-warm-brown text-md tracking-wide">
-          Artisanal Sourdough Bagels & Breads
+          {tagline}
         </p>
 
         <p
           class="md:hidden font-serif text-warm-brown text-xs tracking-widest uppercase mt-4"
         >
-          Made Fresh in Durango, Colorado
+          {locationText}
         </p>
       </div>
 
@@ -181,7 +185,7 @@ function isActive(href: string): boolean {
           <p
             class="font-serif text-warm-brown text-xs tracking-widest uppercase justify-self-center"
           >
-            Made Fresh in Durango, Colorado
+            {locationText}
           </p>
 
           <!-- Right: order button -->

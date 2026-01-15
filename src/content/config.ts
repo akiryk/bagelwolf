@@ -55,10 +55,19 @@ const orderButton = defineCollection({
   }),
 });
 
+const siteSettings = defineCollection({
+  type: 'content',
+  schema: z.object({
+    tagline: z.string(),
+    locationText: z.string(),
+  }),
+});
+
 export const collections = {
   about,
   signup,
   'featured-bagels': featuredBagels,
   'featured-breads': featuredBreads,
   'order-button': orderButton,
+  'site-settings': siteSettings,
 };

@@ -81,3 +81,13 @@ collections:
         fields:
           - { label: 'Button Text', name: 'text', widget: 'string' }
           - { label: 'Button URL', name: 'url', widget: 'string' }
+
+  - name: 'site-settings'
+    label: 'Site Settings'
+    files:
+      - name: 'site-settings'
+        label: 'Site Branding'
+        file: 'src/content/site-settings/index.md'
+        fields:
+          - { label: 'Tagline', name: 'tagline', widget: 'string', hint: 'Appears below the logo' }
+          - { label: 'Location Text', name: 'locationText', widget: 'string', hint: 'Appears in the navigation bar' }
