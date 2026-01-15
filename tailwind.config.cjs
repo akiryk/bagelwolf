@@ -18,6 +18,7 @@ module.exports = {
         md: '840px', // Custom
         lg: '1100px', // Custom
         xl: '1320px', // Custom
+        '2xl': '1536px', // Tailwind default
       },
     },
   },
