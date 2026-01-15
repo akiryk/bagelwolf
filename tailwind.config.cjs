@@ -1,6 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{astro,html,js,ts,jsx,tsx,md}', './public/**/*.html'],
+  safelist: [
+    'font-light',
+    'font-extralight',
+    'font-serif',
+    'font-sans',
+    // Add any others you know you're using dynamically or conditionally
+  ],
   theme: {
     extend: {
       colors: {
@@ -10,7 +17,7 @@ module.exports = {
         'warm-brown': '#a08067',
       },
       fontFamily: {
-        sans: ['"Open Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ["'Open Sans'", 'ui-sans-serif', 'system-ui', 'sans-serif'],
         serif: ['Spectral', 'ui-serif', 'Georgia', 'serif'],
       },
       screens: {

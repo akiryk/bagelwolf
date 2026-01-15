@@ -43,8 +43,8 @@ function isActive(href: string): boolean {
   return currentPath.startsWith(href);
 }
 
-function navLinkClasses(href: string): string {
-  const base = 'text-2xl tracking-wider transition-colors';
+function navLinkClasses(href: string, size: 'sm' | '2xl' = 'sm'): string {
+  const base = `text-${size} tracking-wider transition-colors`;
   return isActive(href)
     ? `${base} font-bold text-stone-900`
     : `${base} text-stone-600 hover:text-stone-900`;
@@ -233,7 +233,7 @@ function navLinkClasses(href: string): string {
             navLinks.map((link) => (
               <a
                 href={link.href}
-                class={navLinkClasses(link.href)}
+                class={navLinkClasses(link.href, '2xl')}
                 aria-current={isActive(link.href) ? 'page' : undefined}
               >
                 {link.label}
