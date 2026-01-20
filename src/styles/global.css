@@ -53,3 +53,30 @@
 :focus:not(:focus-visible) {
   outline: none;
 }
+
+/* Nav link hover animation - underline expands from center */
+.nav-link-animated {
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.nav-link-animated::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #db5009;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s ease;
+}
+
+.nav-link-animated:hover {
+  color: #db5009;
+}
+
+.nav-link-animated:hover::after {
+  transform: scaleX(1);
+}

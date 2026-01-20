@@ -44,10 +44,17 @@ function isActive(href: string): boolean {
 }
 
 function navLinkClasses(href: string, size: 'sm' | '2xl' = 'sm'): string {
-  const base = `text-${size} tracking-wider transition-colors`;
+  const base = `text-${size} tracking-wider`;
+  if (size === 'sm') {
+    // Desktop: animated underline, hover handled by CSS
+    return isActive(href)
+      ? `${base} nav-link-animated font-bold text-stone-900`
+      : `${base} nav-link-animated text-stone-600`;
+  }
+  // Mobile: simple color transition
   return isActive(href)
-    ? `${base} font-bold text-stone-900`
-    : `${base} text-stone-600 hover:text-stone-900`;
+    ? `${base} transition-colors font-bold text-stone-900`
+    : `${base} transition-colors text-stone-600 hover:text-stone-900`;
 }
 ---
 
