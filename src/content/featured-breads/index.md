@@ -1,13 +1,13 @@
 ---
 title: Sourdough Breads
 items:
-  - name: Olive Rosemary
+  - name: Placeholder Image
     image: /images/bread-olive.png
-  - name: Rugbrød
+  - name: Placeholder Image
     image: /images/bread-rugbrod.png
-  - name: Walnut
+  - name: Placeholder Image
     image: /images/bread-walnut.png
-  - name: Tartine
+  - name: Placeholder Image
     image: /images/bread-tartine.png
 ctaText: See all breads
 ctaLink: /bread
