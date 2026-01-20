@@ -1,6 +1,6 @@
 ---
 title: The Bagelwolf Story
-image: /images/adam-bagels.jpeg
+image: /images/img_4977-small.jpeg
 imageAlt: Adam portrait
 imageCaption: ""
 ---
