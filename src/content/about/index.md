@@ -4,6 +4,10 @@ image: /images/img_4977-small.jpeg
 imageAlt: Adam portrait
 imageCaption: ""
 ---
+**Note**: This is a work in progress. I'm making bagels, but not yet ready to sell or distribute except to a small test audience. Please [reach out](bagelwolfbakery@gmail.com) if you're interested!
+
+**Feedback**: Please provide feedback with [this form](https://forms.gle/CWTYSkKffswJyMFi6). Thank you.
+
 Bagelwolf is Adam Kiryk, a transplant from Brookline, Massachusetts
 who grew up on northeastern-style bagels. After a career in design
 and software development, Adam left to pursue his passion for baking sourdough breads.
