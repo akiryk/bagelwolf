@@ -54,6 +54,16 @@
   outline: none;
 }
 
+/* Content link styles */
+main a:not(.nav-link-animated):not([class*="bg-brand"]) {
+  color: #db5009;
+  text-decoration: underline;
+}
+
+main a:not(.nav-link-animated):not([class*="bg-brand"]):hover {
+  color: #b84407;
+}
+
 /* Nav link hover animation - underline expands from center */
 .nav-link-animated {
   position: relative;
