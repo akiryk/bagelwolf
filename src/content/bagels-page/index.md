@@ -57,7 +57,8 @@ philosophyBody: >-
 
   My goal isn’t to reinvent the bagel — it’s to make one that respects the tradition while leaning into what sourdough does best.
 ctaTitle: Ready to try them?
-ctaBody: "I bake weekly. Reach out at bagelwolfbakery@gmail.com or check my
-  hotplate page (https://www.hotplate.com/bagelwolf). Note that I'm still in
+ctaBody: "I bake weekly. Reach out at
+  [mailto:bagelwolfbakery@gmail.com](bagelwolfbakery@gmail.com) or check my
+  [hotplate page](https://www.hotplate.com/bagelwolf). Note that I'm still in
   development mode, so things might be a bit irregular. "
 ---
