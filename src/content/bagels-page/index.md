@@ -15,10 +15,9 @@ items:
   - name: Onion
     description: "My onion bagels aren't like others you may have tried. Instead of
       sprinkling onion flakes onto the top of the bagel before it bakes, I mix
-      rehydrated onion directly into the dough — where it then shares it's
-      oniony goodness through the entire bagel, not just the top. I use dry
-      onion flakes rather than fresh for two reasons: concentrated flavor and
-      less moisture. "
+      onion directly into the dough — where it then shares it's oniony goodness
+      through the entire bagel, not just the top. I use dry onion flakes rather
+      than fresh for two reasons: concentrated flavor and less moisture. "
     image: /images/onion-bagel.jpg
   - name: Everything/Onion
     description: "I add homemade everything mix to the onion bagels for an extra
