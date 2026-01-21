@@ -33,8 +33,8 @@ values:
   - title: Traditional Craft
     description: "My bagels are hand-rolled, boiled, and baked using time-honored
       techniques. Well, I'm using sourdough, which isn't exactly \"traditional\"
-      — but it's fun, delicious, special, and gives it a little epesdik (you
-      know, je ne sais quoi). "
+      — but it's fun, delicious, special, and gives it a little epes (which is
+      Yiddish and means, you know, je ne sais quoi). "
 photoImage: /images/img_4777.jpeg
 photoAlt: The Bagelwolf workspace
 photoCaption: The Bagelwolf workspace in Durango
