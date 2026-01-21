@@ -39,7 +39,7 @@ photoImage: /images/img_4777.jpeg
 photoAlt: The Bagelwolf workspace
 photoCaption: The Bagelwolf workspace in Durango
 ---
-**A work in progress**. I'm making bagels, but not yet ready to sell or distribute except to a small test audience. Please [reach out](bagelwolfbakery@gmail.com) if you're interested!
+**A work in progress**. I'm making bagels, but not yet ready to sell or distribute except to a small test audience. Please [reach out](mailto:bagelwolfbakery@gmail.com) if you're interested!
 
 **Feedback**: If you've tried my bagels or bread, I'd love your feedback! Please provide it with [this form](https://forms.gle/CWTYSkKffswJyMFi6). Thank you.
 
