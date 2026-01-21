@@ -4,22 +4,37 @@ image: /images/img_4977-small.jpeg
 imageAlt: Adam portrait
 imageCaption: ""
 processTitle: The Process
-processBody: |
-  Every Bagelwolf bagel starts with a homemade sourdough starter, fed daily with a blend of whole wheat and all-purpose flours. This living culture is the heart of what gives our bagels their distinctive flavor and character.
+processBody: >-
+  Every Bagelwolf bagel starts with a homemade sourdough starter, fed daily with
+  a blend of whole wheat and all-purpose flours. This living culture is the
+  heart of what gives our bagels their distinctive flavor and character.
 
-  The dough is hand-rolled using the traditional coil technique — a method that creates the perfect shape and texture that machine-made bagels simply can't replicate. After shaping, each bagel undergoes a 24-hour cold fermentation. This slow process develops complex flavors and creates the ideal crust.
 
-  Finally, the bagels are boiled (the step most "bagels" skip) and then baked until golden. The result is a bagel with a satisfying chew, a slight tang from the sourdough, and a crust that has just the right amount of crackle.
+  The dough is hand-rolled using the traditional technique, a method that creates an irregular (read: perfect) shape and texture that machine-made bagels simply can't replicate. If you want to see how the NYC pros do it, check out [this video on youtube](https://youtu.be/PXco1fwVPd0?si=hS9nM9PS1tLm24gG&t=427). If you want to see how I do it, well, here's a [somewhat less impressive video](https://www.instagram.com/p/DTtQi6SD_ob/) to check out. 
+
+
+  After shaping, the bagels are treated to an overnight *retard* — a long, cold fermentation period that develops complex flavors and creates a crust characterized by crisp micro-blisters. 
+
+
+  Finally, the bagels are boiled and then baked. The result is a bagel with a satisfying chew, a slight tang from the sourdough, and a crust that has just the right amount of crackle.
 valuesTitle: What We Believe
 values:
-  - title: Quality First
-    description: Every ingredient matters. We use high-quality flours and real, whole ingredients.
+  - title: Quality
+    description: Every ingredient matters. I use high-quality flours and
+      ingredients, and I sweat the details such as consistently microblistered
+      crust.
   - title: Small Batch
-    description: We bake in small batches to ensure freshness and consistency in every bagel and loaf.
+    description: "I bake in small batches to ensure freshness and consistency in
+      every bagel and loaf. Also because I can't really make more than a few
+      dozen at a time even if I wanted to make more. "
   - title: Local & Personal
-    description: Made right here in Durango, with care and attention that only a small bakery can provide.
+    description: "Made right here in Durango, with care and attention that only a
+      micro bakery can provide. "
   - title: Traditional Craft
-    description: Hand-rolled, boiled, and baked using time-honored techniques — no shortcuts.
+    description: "My bagels are hand-rolled, boiled, and baked using time-honored
+      techniques. Well, I'm using sourdough, which isn't exactly \"traditional\"
+      — but it's fun, delicious, special, and gives it a little epesdik (you
+      know, je ne sais quoi). "
 photoImage: /images/placeholder.jpg
 photoAlt: The Bagelwolf workspace
 photoCaption: The Bagelwolf workspace in Durango
