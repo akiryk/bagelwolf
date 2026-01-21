@@ -1,9 +1,7 @@
 ---
 introTitle: Our Bagels
-introBody: >-
-  Every bagel is made with our homemade sourdough starter, hand-rolled using the
-  traditional coil technique, and cold-fermented for 24 hours. We bake fresh
-  every Saturday.
+introBody: "Every bagel is made with my homemade sourdough starter, hand-rolled,
+  and cold-fermented overnight. "
 items:
   - name: Plain
     description: Classic sourdough bagel — the foundation of everything we do.
@@ -25,8 +23,7 @@ philosophyBody: >-
   shine.
 
 
-  Too many "bagels" today are just round bread. We're here to make bagels the
-  way they should be made: with time, care, and respect for the craft.
+  Too many "bagels" today are just round bread. We're here to make bagels the way they should be made: with time, care, and respect for the craft.
 ctaTitle: Ready to try them?
 ctaBody: We bake bagels fresh every Saturday. Order ahead to reserve yours.
 ---
