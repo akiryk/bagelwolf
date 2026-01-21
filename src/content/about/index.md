@@ -10,7 +10,7 @@ processBody: >-
   heart of what gives my bagels their distinctive flavor and character.
 
 
-  The dough is hand-rolled using a traditional technique — a method that produces an intentionally irregular (read: perfect) shape and texture that machine-made bagels simply can’t replicate. If you’re curious how the NYC pros do it, [here’s a great video](https://youtu.be/PXco1fwVPd0?si=hS9nM9PS1tLm24gG&t=427). And if you want to see how I do it, there’s a slightly less polished—but very real—[version here](https://www.instagram.com/p/DTtQi6SD_ob/).
+  The dough is hand-rolled using a traditional technique — a method that produces an intentionally irregular (read: perfect) shape and texture that machine-made bagels simply can’t replicate. If you’re curious how the NYC pros do it, [here’s a great video](https://youtu.be/PXco1fwVPd0?si=hS9nM9PS1tLm24gG&t=427). And if you want to see how I do it, there’s a slightly less polished — but very real—[version here](https://www.instagram.com/p/DTtQi6SD_ob/).
 
 
   After shaping, the bagels undergo an overnight retard: a long, cold fermentation that develops deeper flavor and creates a crisp crust with fine micro-blistering (what the heck is micro-blistering? Look at the tiny dots all over [this bagel](https://www.instagram.com/p/DTvvRxAj_xg/)).
