@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { marked } from 'marked';
 
 const aboutEntries = await getCollection('about');
 const about = aboutEntries[0];
@@ -15,6 +16,9 @@ const {
   photoCaption,
 } = about.data;
 const { Content } = await about.render();
+
+// Parse processBody markdown to HTML
+const processBodyHtml = await marked.parse(processBody);
 ---
 
 <BaseLayout
@@ -43,11 +47,7 @@ const { Content } = await about.render();
       >
         {processTitle}
       </h2>
-      <div class="text-stone-600 text-lg leading-relaxed space-y-6">
-        {processBody.split('\n\n').map((paragraph) => (
-          <p>{paragraph}</p>
-        ))}
-      </div>
+      <div class="text-stone-600 text-lg leading-relaxed space-y-6" set:html={processBodyHtml} />
     </div>
   </section>
 
