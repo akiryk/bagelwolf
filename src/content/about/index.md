@@ -17,7 +17,7 @@ processBody: >-
 
 
   Finally, the bagels are boiled and baked. The result is a bagel with a satisfying chew, a subtle sourdough tang, and a crust with just the right amount of crackle.
-valuesTitle: What We Believe
+valuesTitle: What I Believe
 values:
   - title: Quality
     description: Every ingredient matters. I use high-quality flours and
