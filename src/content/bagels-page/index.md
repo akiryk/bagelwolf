@@ -1,12 +1,14 @@
 ---
 introTitle: Our Bagels
-introBody: "Every bagel is made with my homemade sourdough starter, hand-rolled,
-  and cold-fermented overnight. "
+introBody: >+
+  Every bagel is made with sourdough starter, hand-rolled, and cold-fermented
+  overnight develop the perfect flavor and crust. My goal is chewy, flavorful
+  bagels that taste like they should.
+
+
 items:
   - name: Plain
     description: Classic sourdough bagel — the foundation of everything we do.
-  - name: Sesame
-    description: Topped with toasted sesame seeds for a nutty, aromatic finish.
   - name: Everything
     description: Sesame, poppy, garlic, onion, and salt — boldly seasoned.
   - name: Onion
@@ -23,7 +25,9 @@ philosophyBody: >-
   shine.
 
 
-  Too many "bagels" today are just round bread. We're here to make bagels the way they should be made: with time, care, and respect for the craft.
+  Too many "bagels" today are just round bread. I'm here to make bagels the way they should be made: with time, care, and respect for the craft.
 ctaTitle: Ready to try them?
-ctaBody: We bake bagels fresh every Saturday. Order ahead to reserve yours.
+ctaBody: "I bake weekly. Reach out at bagelwolfbakery@gmail.com or check my
+  hotplate page (https://www.hotplate.com/bagelwolf). Note that I'm still in
+  development mode, so things might be a bit irregular. "
 ---
