@@ -2,7 +2,7 @@
 introTitle: The Bagels
 introBody: >+
   Every bagel is made with sourdough starter, hand-rolled, and cold-fermented
-  overnight develop the perfect flavor and crust. My goal is chewy, flavorful
+  overnight to develop the perfect flavor and crust. My goal is chewy, flavorful
   bagels that taste like they should.
 
 
