@@ -24,5 +24,6 @@ infoBody: >-
 
   Also yum.
 ctaTitle: Want to reserve a loaf?
-ctaBody: Our breads sell out fast. Order ahead to guarantee yours.
+ctaBody: "I'm not currently selling loaves of bread, but I'm giving them away.
+  What a great business model! Anyway, reach out to bagelwolfbakery@gmail.com. "
 ---
