@@ -1,8 +1,4 @@
-// Netlify function to proxy MailerLite form submissions
-// This avoids CORS issues and keeps the implementation clean
-
-const MAILERLITE_ACCOUNT_ID = '1976134';
-const MAILERLITE_FORM_ID = '37scIv';
+// Netlify function to add subscribers via MailerLite API
 
 export async function handler(event) {
   // Only allow POST requests
@@ -10,6 +6,16 @@ export async function handler(event) {
     return {
       statusCode: 405,
       body: JSON.stringify({ error: 'Method not allowed' }),
+    };
+  }
+
+  const apiKey = process.env.MAILERLITE_API_KEY;
+
+  if (!apiKey) {
+    console.error('MAILERLITE_API_KEY environment variable is not set');
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: 'Server configuration error' }),
     };
   }
 
@@ -23,22 +29,17 @@ export async function handler(event) {
       };
     }
 
-    // Submit to MailerLite's form endpoint
-    const formData = new URLSearchParams();
-    formData.append('fields[email]', email);
-    formData.append('ml-submit', '1');
-    formData.append('anticsrf', 'true');
+    // Submit to MailerLite's REST API
+    const response = await fetch('https://connect.mailerlite.com/api/subscribers', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({ email }),
+    });
 
-    const response = await fetch(
-      `https://assets.mailerlite.com/jsonp/${MAILERLITE_ACCOUNT_ID}/forms/${MAILERLITE_FORM_ID}/subscribe`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: formData.toString(),
-      }
-    );
+    const data = await response.json();
 
     if (response.ok) {
       return {
@@ -46,8 +47,14 @@ export async function handler(event) {
         body: JSON.stringify({ success: true, message: 'Successfully subscribed!' }),
       };
     } else {
-      const errorText = await response.text();
-      console.error('MailerLite error:', errorText);
+      console.error('MailerLite error:', data);
+      // Handle specific errors
+      if (response.status === 422 && data.message?.includes('already')) {
+        return {
+          statusCode: 200,
+          body: JSON.stringify({ success: true, message: 'You\'re already subscribed!' }),
+        };
+      }
       return {
         statusCode: 500,
         body: JSON.stringify({ error: 'Subscription failed. Please try again.' }),
