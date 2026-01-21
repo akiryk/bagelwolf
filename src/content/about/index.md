@@ -3,6 +3,26 @@ title: The Bagelwolf Story
 image: /images/img_4977-small.jpeg
 imageAlt: Adam portrait
 imageCaption: ""
+processTitle: The Process
+processBody: |
+  Every Bagelwolf bagel starts with a homemade sourdough starter, fed daily with a blend of whole wheat and all-purpose flours. This living culture is the heart of what gives our bagels their distinctive flavor and character.
+
+  The dough is hand-rolled using the traditional coil technique — a method that creates the perfect shape and texture that machine-made bagels simply can't replicate. After shaping, each bagel undergoes a 24-hour cold fermentation. This slow process develops complex flavors and creates the ideal crust.
+
+  Finally, the bagels are boiled (the step most "bagels" skip) and then baked until golden. The result is a bagel with a satisfying chew, a slight tang from the sourdough, and a crust that has just the right amount of crackle.
+valuesTitle: What We Believe
+values:
+  - title: Quality First
+    description: Every ingredient matters. We use high-quality flours and real, whole ingredients.
+  - title: Small Batch
+    description: We bake in small batches to ensure freshness and consistency in every bagel and loaf.
+  - title: Local & Personal
+    description: Made right here in Durango, with care and attention that only a small bakery can provide.
+  - title: Traditional Craft
+    description: Hand-rolled, boiled, and baked using time-honored techniques — no shortcuts.
+photoImage: /images/placeholder.jpg
+photoAlt: The Bagelwolf workspace
+photoCaption: The Bagelwolf workspace in Durango
 ---
 **A work in progress**. I'm making bagels, but not yet ready to sell or distribute except to a small test audience. Please [reach out](bagelwolfbakery@gmail.com) if you're interested!
 

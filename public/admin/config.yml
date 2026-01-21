@@ -13,21 +13,29 @@ collections:
         label: 'About Page'
         file: 'src/content/about/index.md'
         fields:
-          - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Image', name: 'image', widget: 'image', required: false }
-          - {
-              label: 'Image alt text',
-              name: 'imageAlt',
-              widget: 'string',
-              required: false,
-            }
-          - {
-              label: 'Image caption',
-              name: 'imageCaption',
-              widget: 'string',
-              required: false,
-            }
-          - { label: 'Body', name: 'body', widget: 'markdown' }
+          # Intro Section
+          - { label: 'Intro Title', name: 'title', widget: 'string' }
+          - { label: 'Intro Image', name: 'image', widget: 'image', required: false }
+          - { label: 'Intro Image Alt Text', name: 'imageAlt', widget: 'string', required: false }
+          - { label: 'Intro Image Caption', name: 'imageCaption', widget: 'string', required: false }
+          - { label: 'Intro Body', name: 'body', widget: 'markdown' }
+          # Process Section
+          - { label: 'Process Title', name: 'processTitle', widget: 'string' }
+          - { label: 'Process Body', name: 'processBody', widget: 'markdown' }
+          # Values Section
+          - { label: 'Values Title', name: 'valuesTitle', widget: 'string' }
+          - label: 'Values'
+            name: 'values'
+            widget: 'list'
+            max: 4
+            min: 4
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Description', name: 'description', widget: 'text' }
+          # Photo Section
+          - { label: 'Photo', name: 'photoImage', widget: 'image' }
+          - { label: 'Photo Alt Text', name: 'photoAlt', widget: 'string' }
+          - { label: 'Photo Caption', name: 'photoCaption', widget: 'string' }
 
   - name: 'signup'
     label: 'Signup Section'

@@ -64,6 +64,11 @@ main a:not(.nav-link-animated):not([class*="bg-brand"]):hover {
   color: #b84407;
 }
 
+/* Strong text */
+strong {
+  color: #000000;
+}
+
 /* Nav link hover animation - underline expands from center */
 .nav-link-animated {
   position: relative;
