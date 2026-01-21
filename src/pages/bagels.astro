@@ -1,11 +1,26 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { bagels } from '../data/bagels';
 import { getCollection } from 'astro:content';
+import { marked } from 'marked';
 
 const orderButtonEntries = await getCollection('order-button');
 const orderButton = orderButtonEntries[0];
 const { url: orderButtonUrl } = orderButton.data;
+
+const bagelsPageEntries = await getCollection('bagels-page');
+const bagelsPage = bagelsPageEntries[0];
+const {
+  introTitle,
+  introBody,
+  items,
+  philosophyTitle,
+  philosophyBody,
+  ctaTitle,
+  ctaBody,
+} = bagelsPage.data;
+
+// Parse philosophy markdown to HTML
+const philosophyBodyHtml = await marked.parse(philosophyBody);
 ---
 
 <BaseLayout
@@ -18,12 +33,10 @@ const { url: orderButtonUrl } = orderButton.data;
       <h1
         class="font-serif text-4xl md:text-5xl font-medium text-stone-900 mb-6"
       >
-        Our Bagels
+        {introTitle}
       </h1>
       <p class="text-lg text-stone-600">
-        Every bagel is made with our homemade sourdough starter, hand-rolled
-        using the traditional coil technique, and cold-fermented for 24 hours.
-        We bake fresh every Saturday.
+        {introBody}
       </p>
     </div>
   </section>
@@ -33,15 +46,15 @@ const { url: orderButtonUrl } = orderButton.data;
     <div class="max-w-5xl mx-auto px-4">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {
-          bagels.map((bagel) => (
+          items.map((item) => (
             <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
               <div class="aspect-square bg-stone-200 rounded-md mb-4 flex items-center justify-center">
                 <span class="text-stone-400 text-sm">Photo coming soon</span>
               </div>
               <h2 class="text-xl font-semibold text-stone-900 mb-2">
-                {bagel.name}
+                {item.name}
               </h2>
-              <p class="text-stone-600">{bagel.description}</p>
+              <p class="text-stone-600">{item.description}</p>
             </div>
           ))
         }
@@ -55,21 +68,9 @@ const { url: orderButtonUrl } = orderButton.data;
       <h2
         class="font-serif text-3xl md:text-4xl font-medium text-stone-900 mb-8 text-center"
       >
-        Bagel Philosophy
+        {philosophyTitle}
       </h2>
-      <div class="text-stone-600 text-lg leading-relaxed space-y-6">
-        <p>
-          A real bagel should have chew. It should have a slight tang from
-          natural fermentation and a crust that crackles when you bite into it.
-          It should be boiled before it's baked — that's what gives it that
-          distinctive density and shine.
-        </p>
-        <p>
-          Too many "bagels" today are just round bread. We're here to make
-          bagels the way they should be made: with time, care, and respect for
-          the craft.
-        </p>
-      </div>
+      <div class="text-stone-600 text-lg leading-relaxed space-y-6" set:html={philosophyBodyHtml} />
     </div>
   </section>
 
@@ -79,10 +80,10 @@ const { url: orderButtonUrl } = orderButton.data;
       <h2
         class="font-serif text-2xl md:text-3xl font-medium text-stone-900 mb-4"
       >
-        Ready to try them?
+        {ctaTitle}
       </h2>
       <p class="text-stone-600 mb-6">
-        We bake bagels fresh every Saturday. Order ahead to reserve yours.
+        {ctaBody}
       </p>
       <a
         href={orderButtonUrl}

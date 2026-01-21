@@ -99,3 +99,51 @@ collections:
         fields:
           - { label: 'Tagline', name: 'tagline', widget: 'string', hint: 'Appears below the logo' }
           - { label: 'Location Text', name: 'locationText', widget: 'string', hint: 'Appears in the navigation bar' }
+
+  - name: 'bagels-page'
+    label: 'Bagels Page'
+    files:
+      - name: 'bagels-page'
+        label: 'Bagels Page'
+        file: 'src/content/bagels-page/index.md'
+        fields:
+          # Intro Section
+          - { label: 'Intro Title', name: 'introTitle', widget: 'string' }
+          - { label: 'Intro Body', name: 'introBody', widget: 'text' }
+          # Bagel Items
+          - label: 'Bagel Items'
+            name: 'items'
+            widget: 'list'
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - { label: 'Description', name: 'description', widget: 'text' }
+          # Philosophy Section
+          - { label: 'Philosophy Title', name: 'philosophyTitle', widget: 'string' }
+          - { label: 'Philosophy Body', name: 'philosophyBody', widget: 'markdown' }
+          # Order CTA Section
+          - { label: 'CTA Title', name: 'ctaTitle', widget: 'string' }
+          - { label: 'CTA Body', name: 'ctaBody', widget: 'text' }
+
+  - name: 'bread-page'
+    label: 'Bread Page'
+    files:
+      - name: 'bread-page'
+        label: 'Bread Page'
+        file: 'src/content/bread-page/index.md'
+        fields:
+          # Intro Section
+          - { label: 'Intro Title', name: 'introTitle', widget: 'string' }
+          - { label: 'Intro Body', name: 'introBody', widget: 'text' }
+          # Bread Items
+          - label: 'Bread Items'
+            name: 'items'
+            widget: 'list'
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - { label: 'Description', name: 'description', widget: 'text' }
+          # Info Section (replaces baking schedule)
+          - { label: 'Info Section Title', name: 'infoTitle', widget: 'string' }
+          - { label: 'Info Section Body', name: 'infoBody', widget: 'markdown' }
+          # Order CTA Section
+          - { label: 'CTA Title', name: 'ctaTitle', widget: 'string' }
+          - { label: 'CTA Body', name: 'ctaBody', widget: 'text' }

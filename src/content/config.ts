@@ -79,6 +79,50 @@ const siteSettings = defineCollection({
   }),
 });
 
+const bagelsPage = defineCollection({
+  type: 'content',
+  schema: z.object({
+    // Intro section
+    introTitle: z.string(),
+    introBody: z.string(),
+    // Bagel items
+    items: z.array(
+      z.object({
+        name: z.string(),
+        description: z.string(),
+      })
+    ),
+    // Philosophy section
+    philosophyTitle: z.string(),
+    philosophyBody: z.string(),
+    // Order CTA section
+    ctaTitle: z.string(),
+    ctaBody: z.string(),
+  }),
+});
+
+const breadPage = defineCollection({
+  type: 'content',
+  schema: z.object({
+    // Intro section
+    introTitle: z.string(),
+    introBody: z.string(),
+    // Bread items
+    items: z.array(
+      z.object({
+        name: z.string(),
+        description: z.string(),
+      })
+    ),
+    // Philosophy/Info section (replaces baking schedule)
+    infoTitle: z.string(),
+    infoBody: z.string(),
+    // Order CTA section
+    ctaTitle: z.string(),
+    ctaBody: z.string(),
+  }),
+});
+
 export const collections = {
   about,
   signup,
@@ -86,4 +130,6 @@ export const collections = {
   'featured-breads': featuredBreads,
   'order-button': orderButton,
   'site-settings': siteSettings,
+  'bagels-page': bagelsPage,
+  'bread-page': breadPage,
 };
