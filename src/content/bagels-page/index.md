@@ -19,11 +19,13 @@ items:
       oniony goodness through the entire bagel, not just the top. I use dry
       onion flakes rather than fresh for two reasons: concentrated flavor and
       less moisture. "
+    image: /images/onion-bagel.jpg
   - name: Everything/Onion
     description: "I add homemade everything mix to the onion bagels for an extra
       special bit of yumminess. The everything mix is poppy seeds, white and
       black sesame seeds, onion flakes, garlic flakes, and salt. It's actually
       pretty awesome on just about anything. "
+    image: /images/everything-bagel.jpg
 philosophyTitle: Bagel Philosophy
 philosophyBody: >-
   New York style bagels aren't traditionally made with sourdough. One of the
