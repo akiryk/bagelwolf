@@ -21,20 +21,19 @@ valuesTitle: What I Believe
 values:
   - title: Quality
     description: Every ingredient matters. I use high-quality flours and
-      ingredients, and I sweat the details such as consistently microblistered
-      crust.
+      ingredients, and I sweat the details.
   - title: Small Batch
     description: "I bake in small batches to ensure freshness and consistency in
-      every bagel and loaf. Also because I can't really make more than a few
+      every bagel. Also — to be honest — I can't really make more than a few
       dozen at a time even if I wanted to make more. "
   - title: Local & Personal
-    description: "Made right here in Durango, with care and attention that only a
-      micro bakery can provide. "
+    description: "Made right here in Durango, with the care and attention that only
+      a micro bakery can provide. "
   - title: Traditional Craft
     description: "My bagels are hand-rolled, boiled, and baked using time-honored
-      techniques. Well, I'm using sourdough, which isn't exactly \"traditional\"
-      — but it's fun, delicious, special, and gives it a little epes (which is
-      Yiddish and means, you know, je ne sais quoi). "
+      techniques — mostly. It isn't actually traditional to use sourdough, but
+      it's fun, delicious, special, and gives it a little epes (which is Yiddish
+      and means, you know, je ne sais quoi). "
 photoImage: /images/img_4777.jpeg
 photoAlt: The Bagelwolf workspace
 photoCaption: The Bagelwolf workspace in Durango
