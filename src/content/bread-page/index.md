@@ -22,7 +22,7 @@ infoBody: >-
   I shape each loaf by hand, score them with care, and bake them until the crust is deeply caramelized. The result is bread with character: crusty on the outside, soft and airy within.
 
 
-  Also yum.
+  Yum.
 ctaTitle: Want to reserve a loaf?
 ctaBody: "I'm not currently selling loaves of bread, but I'm giving them away.
   What a great business model! Anyway, reach out to bagelwolfbakery@gmail.com. "
