@@ -19,8 +19,9 @@ const {
   ctaBody,
 } = bagelsPage.data;
 
-// Parse philosophy markdown to HTML
+// Parse markdown to HTML
 const philosophyBodyHtml = await marked.parse(philosophyBody);
+const ctaBodyHtml = await marked.parse(ctaBody);
 ---
 
 <BaseLayout
@@ -48,9 +49,17 @@ const philosophyBodyHtml = await marked.parse(philosophyBody);
         {
           items.map((item) => (
             <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
-              <div class="aspect-square bg-stone-200 rounded-md mb-4 flex items-center justify-center">
-                <span class="text-stone-400 text-sm">Photo coming soon</span>
-              </div>
+              {item.image ? (
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  class="aspect-square object-cover rounded-md mb-4"
+                />
+              ) : (
+                <div class="aspect-square bg-stone-200 rounded-md mb-4 flex items-center justify-center">
+                  <span class="text-stone-400 text-sm">Photo coming soon</span>
+                </div>
+              )}
               <h2 class="text-xl font-semibold text-stone-900 mb-2">
                 {item.name}
               </h2>
@@ -82,9 +91,7 @@ const philosophyBodyHtml = await marked.parse(philosophyBody);
       >
         {ctaTitle}
       </h2>
-      <p class="text-stone-600 mb-6">
-        {ctaBody}
-      </p>
+      <div class="text-stone-600 mb-6" set:html={ctaBodyHtml} />
       <a
         href={orderButtonUrl}
         target="_blank"

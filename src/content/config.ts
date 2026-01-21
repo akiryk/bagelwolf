@@ -90,6 +90,7 @@ const bagelsPage = defineCollection({
       z.object({
         name: z.string(),
         description: z.string(),
+        image: z.string().optional(),
       })
     ),
     // Philosophy section
@@ -112,6 +113,7 @@ const breadPage = defineCollection({
       z.object({
         name: z.string(),
         description: z.string(),
+        image: z.string().optional(),
       })
     ),
     // Philosophy/Info section (replaces baking schedule)

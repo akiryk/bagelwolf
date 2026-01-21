@@ -117,12 +117,13 @@ collections:
             fields:
               - { label: 'Name', name: 'name', widget: 'string' }
               - { label: 'Description', name: 'description', widget: 'text' }
+              - { label: 'Photo', name: 'image', widget: 'image', required: false }
           # Philosophy Section
           - { label: 'Philosophy Title', name: 'philosophyTitle', widget: 'string' }
           - { label: 'Philosophy Body', name: 'philosophyBody', widget: 'markdown' }
           # Order CTA Section
           - { label: 'CTA Title', name: 'ctaTitle', widget: 'string' }
-          - { label: 'CTA Body', name: 'ctaBody', widget: 'text' }
+          - { label: 'CTA Body', name: 'ctaBody', widget: 'markdown' }
 
   - name: 'bread-page'
     label: 'Bread Page'
@@ -141,9 +142,10 @@ collections:
             fields:
               - { label: 'Name', name: 'name', widget: 'string' }
               - { label: 'Description', name: 'description', widget: 'text' }
+              - { label: 'Photo', name: 'image', widget: 'image', required: false }
           # Info Section (replaces baking schedule)
           - { label: 'Info Section Title', name: 'infoTitle', widget: 'string' }
           - { label: 'Info Section Body', name: 'infoBody', widget: 'markdown' }
           # Order CTA Section
           - { label: 'CTA Title', name: 'ctaTitle', widget: 'string' }
-          - { label: 'CTA Body', name: 'ctaBody', widget: 'text' }
+          - { label: 'CTA Body', name: 'ctaBody', widget: 'markdown' }
