@@ -6,17 +6,17 @@ imageCaption: ""
 processTitle: The Process
 processBody: >-
   Every Bagelwolf bagel starts with a homemade sourdough starter, fed daily with
-  a blend of whole wheat and all-purpose flours. This living culture is the
+  a blend of whole-wheat and all-purpose flours. This living culture is at the
   heart of what gives our bagels their distinctive flavor and character.
 
 
-  The dough is hand-rolled using the traditional technique, a method that creates an irregular (read: perfect) shape and texture that machine-made bagels simply can't replicate. If you want to see how the NYC pros do it, check out [this video on youtube](https://youtu.be/PXco1fwVPd0?si=hS9nM9PS1tLm24gG&t=427). If you want to see how I do it, well, here's a [somewhat less impressive video](https://www.instagram.com/p/DTtQi6SD_ob/) to check out. 
+  The dough is hand-rolled using a traditional technique—a method that produces an intentionally irregular (read: perfect) shape and texture that machine-made bagels simply can’t replicate. If you’re curious how the NYC pros do it, [here’s a great video](https://youtu.be/PXco1fwVPd0?si=hS9nM9PS1tLm24gG&t=427). And if you want to see how I do it, there’s a slightly less polished—but very real—[version here](https://www.instagram.com/p/DTtQi6SD_ob/).
 
 
-  After shaping, the bagels are treated to an overnight *retard* — a long, cold fermentation period that develops complex flavors and creates a crust characterized by crisp micro-blisters. 
+  After shaping, the bagels undergo an overnight retard: a long, cold fermentation that develops deeper flavor and creates a crisp crust with fine micro-blistering.
 
 
-  Finally, the bagels are boiled and then baked. The result is a bagel with a satisfying chew, a slight tang from the sourdough, and a crust that has just the right amount of crackle.
+  Finally, the bagels are boiled and baked. The result is a bagel with a satisfying chew, a subtle sourdough tang, and a crust with just the right amount of crackle.
 valuesTitle: What We Believe
 values:
   - title: Quality
