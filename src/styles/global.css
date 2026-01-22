@@ -4,8 +4,8 @@
 @config "../../tailwind.config.cjs";
 
 @theme {
-  --font-sans: "Open Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Spectral", ui-serif, Georgia, serif;
+  --font-sans: 'Open Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Spectral', ui-serif, Georgia, serif;
 }
 
 :root {
@@ -55,12 +55,12 @@
 }
 
 /* Content link styles */
-main a:not(.nav-link-animated):not([class*="bg-brand"]) {
+main a:not(.nav-link-animated):not([class*='bg-brand']) {
   color: #db5009;
   text-decoration: underline;
 }
 
-main a:not(.nav-link-animated):not([class*="bg-brand"]):hover {
+main a:not(.nav-link-animated):not([class*='bg-brand']):hover {
   color: #b84407;
 }
 
@@ -69,13 +69,13 @@ strong {
   color: #000000;
 }
 
-/* Nav link hover animation - underline expands from center */
+/* Nav link hover animation - underline expands from center (not on active link) */
 .nav-link-animated {
   position: relative;
   transition: color 0.25s ease;
 }
 
-.nav-link-animated::after {
+.nav-link-animated:not([aria-current='page'])::after {
   content: '';
   position: absolute;
   bottom: -2px;
@@ -88,10 +88,46 @@ strong {
   transition: transform 0.25s ease;
 }
 
-.nav-link-animated:hover {
+.nav-link-animated:not([aria-current='page']):hover {
   color: #db5009;
 }
 
-.nav-link-animated:hover::after {
+.nav-link-animated:not([aria-current='page']):hover::after {
   transform: scaleX(1);
+}
+
+@layer components {
+  a[aria-current='page'] {
+    position: relative;
+  }
+
+  a[aria-current='page']::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: calc(100% + 16px);
+    height: 20px;
+
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.2);
+
+    pointer-events: none;
+    z-index: 10;
+
+    animation: bookmark-slide-down 300ms ease-out forwards;
+  }
+
+  @keyframes bookmark-slide-down {
+    from {
+      top: 0%;
+      opacity: 0;
+    }
+    to {
+      top: 170%;
+      opacity: 1;
+    }
+  }
 }

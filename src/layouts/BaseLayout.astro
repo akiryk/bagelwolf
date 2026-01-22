@@ -48,12 +48,12 @@ function navLinkClasses(href: string, size: 'sm' | '2xl' = 'sm'): string {
   if (size === 'sm') {
     // Desktop: animated underline, hover handled by CSS
     return isActive(href)
-      ? `${base} nav-link-animated font-bold text-stone-900`
+      ? `${base} nav-link-animated font-bold text-brand`
       : `${base} nav-link-animated text-stone-600`;
   }
   // Mobile: simple color transition
   return isActive(href)
-    ? `${base} transition-colors font-bold text-stone-900`
+    ? `${base} transition-colors font-bold text-brand`
     : `${base} transition-colors text-stone-600 hover:text-stone-900`;
 }
 ---
@@ -168,13 +168,13 @@ function navLinkClasses(href: string, size: 'sm' | '2xl' = 'sm'): string {
       </div>
 
       <!-- Navigation Bar - desktop only -->
-      <nav class="hidden md:block border-t border-b border-stone-200">
+      <nav class="hidden md:block border-t border-b border-stone-200 overflow-visible">
         <!-- Desktop nav with true center alignment, respects grid margins -->
         <div
           class="grid grid-cols-3 items-center mx-auto py-3 px-[var(--grid-margin)]"
         >
           <!-- Left: navigation links -->
-          <ul class="flex gap-8 justify-self-start">
+          <ul class="flex gap-8 justify-self-start overflow-visible">
             {
               navLinks.map((link) => (
                 <li>

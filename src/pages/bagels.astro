@@ -28,6 +28,24 @@ const ctaBodyHtml = await marked.parse(ctaBody);
   title="Bagels | Bagelwolf Bakery"
   description="Explore our sourdough bagel menu: Everything, Sesame, Plain, Poppy, Salt, and Pumpernickel. Hand-rolled, boiled, and baked fresh every Saturday in Durango, Colorado."
 >
+  <!-- Hero Section -->
+  <div
+    class="bagels-hero w-full"
+    role="img"
+    aria-label="Assortment of freshly baked bagels"
+  ></div>
+
+  <style>
+    .bagels-hero {
+      background-image: url('/images/bagels-page-hero.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      /* Height increases as viewport widens: ~200px on mobile, ~400px on wide screens */
+      height: clamp(200px, 25vw, 400px);
+    }
+  </style>
+
   <!-- Intro Section -->
   <section class="py-16 md:py-20">
     <div class="max-w-3xl mx-auto px-4 text-center">
