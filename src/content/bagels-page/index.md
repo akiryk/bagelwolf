@@ -9,7 +9,7 @@ introBody: >+
   crunch like they should.
 
 
-  If you want a bit more of an exclamation, read my bagel philosophy section below.
+  If you want a bit more of an explanation, read my bagel philosophy section below.
 
 items:
   - name: Onion
