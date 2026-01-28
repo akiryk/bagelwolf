@@ -2,7 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SignupForm from '../components/SignupForm.astro';
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import ParallaxScript from '../components/scripts/ParallaxScript.js';
+import heroBoule from '../assets/originals/hero-boule-01.jpg';
 
 const aboutEntries = await getCollection('about');
 const about = aboutEntries[0];
@@ -55,11 +57,13 @@ const { text: orderButtonText, url: orderButtonUrl } = orderButton.data;
       />
     </div>
     <div class="hero-split-right h-[520px] overflow-hidden">
-      <img
-        src="/images/boule-lg.png"
+      <Image
+        src={heroBoule}
         alt="Artisan sourdough boule"
         class="parallax-image w-full h-[750px] lg:h-[850px] xl:h-[1000px] 2xl:h-[1100px] object-cover"
         data-speed="0.5"
+        widths={[800, 1200, 1600, 2000]}
+        sizes="(max-width: 768px) 100vw, 45vw"
       />
     </div>
   </section>

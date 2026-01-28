@@ -2,6 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { marked } from 'marked';
+import { Image } from 'astro:assets';
+import bagelHero from '../assets/originals/bagel-page-hero.jpg';
 
 const orderButtonEntries = await getCollection('order-button');
 const orderButton = orderButtonEntries[0];
@@ -29,64 +31,114 @@ const ctaBodyHtml = await marked.parse(ctaBody);
   description="Explore our sourdough bagel menu: Everything, Sesame, Plain, Poppy, Salt, and Pumpernickel. Hand-rolled, boiled, and baked fresh every Saturday in Durango, Colorado."
 >
   <!-- Hero Section -->
-  <div
-    class="bagels-hero w-full"
-    role="img"
-    aria-label="Assortment of freshly baked bagels"
-  ></div>
-
-  <style>
-    .bagels-hero {
-      background-image: url('/images/bagels-page-hero.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      /* Height increases as viewport widens: ~200px on mobile, ~400px on wide screens */
-      height: clamp(200px, 25vw, 400px);
-    }
-  </style>
-
-  <!-- Intro Section -->
-  <section class="py-16 md:py-20">
-    <div class="max-w-3xl mx-auto px-4 text-center">
-      <h1
-        class="font-serif text-4xl md:text-5xl font-medium text-stone-900 mb-6"
-      >
-        {introTitle}
-      </h1>
-      <p class="text-lg text-stone-600">
-        {introBody}
-      </p>
+  <section class="bagels-hero relative h-[120vh]">
+    <div
+      class="sticky top-0 h-[400px] max-md:h-[200px] overflow-hidden bg-cover"
+      style={`
+      background-image: url(${bagelHero.src});
+      background-position: center bottom;
+    `}
+    >
     </div>
   </section>
 
-  <!-- Bagel Grid -->
-  <section class="bg-stone-50 py-16 md:py-20">
-    <div class="max-w-5xl mx-auto px-4">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {
-          items.map((item) => (
-            <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
-              {item.image ? (
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  class="aspect-square object-cover rounded-md mb-4"
-                />
-              ) : (
-                <div class="aspect-square bg-stone-200 rounded-md mb-4 flex items-center justify-center">
-                  <span class="text-stone-400 text-sm">Photo coming soon</span>
-                </div>
-              )}
-              <h2 class="text-xl font-semibold text-stone-900 mb-2">
-                {item.name}
-              </h2>
-              <p class="text-stone-600">{item.description}</p>
-            </div>
-          ))
-        }
+  <style>
+    .bagels-hero {
+      /* Height increases as viewport widens: ~200px on mobile, ~400px on wide screens */
+      height: clamp(200px, 25vw, 400px);
+    }
+
+    /* Hero paragraph with drop cap */
+    .hero-paragraph {
+      font-family: 'Spectral', serif;
+      font-size: 24px;
+      color: #000;
+      line-height: 1.5;
+    }
+
+    .hero-paragraph::first-letter {
+      float: left;
+      font-size: 78px;
+      line-height: 0.8;
+      padding-right: 8px;
+      padding-top: 4px;
+      color: #db5009;
+      font-weight: 300;
+    }
+
+    /* Bagel card wrapper with background that bleeds into gutter */
+    .bagel-card-wrapper {
+      position: relative;
+    }
+
+    .bagel-card-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      /* Start at column 3 position minus half the gutter */
+      left: calc(
+        (2 * (100% + var(--grid-gutter)) / 9) - (var(--grid-gutter) / 2)
+      );
+      right: 0;
+      background-color: #f4f2ea;
+      z-index: 0;
+    }
+
+    .bagel-card h2 {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+      font-size: 32px;
+      color: #702600;
+      margin-bottom: 8px;
+    }
+
+    .bagel-card p {
+      font-family: 'Spectral', serif;
+      font-size: 20px;
+      color: #000;
+      line-height: 1.5;
+    }
+  </style>
+
+  <!-- Hero Paragraph Section -->
+  <section class="grid-container py-16 md:py-20">
+    <div class="grid-9">
+      <div class="col-span-9 md:col-span-5 md:col-start-3">
+        <p class="hero-paragraph">
+          {introBody}
+        </p>
       </div>
     </div>
+  </section>
+
+  <!-- Bagel Cards -->
+  <section class="grid-container">
+    {
+      items.map((item) => (
+        <div class="bagel-card-wrapper grid-9 py-8 md:py-10 mb-5">
+          {/* Image - 2 columns starting at col 3 (aligned with hero paragraph) */}
+          <div class="col-span-9 md:col-span-2 md:col-start-3 mb-6 md:mb-0 relative z-10">
+            {item.image ? (
+              <img
+                src={item.image}
+                alt={item.name}
+                class="aspect-square object-cover w-full"
+              />
+            ) : (
+              <div class="aspect-square bg-stone-200 flex items-center justify-center">
+                <span class="text-stone-400 text-sm">Photo coming soon</span>
+              </div>
+            )}
+          </div>
+          {/* Text content - starts at col 5 */}
+          <div class="bagel-card col-span-9 md:col-span-4 md:col-start-5 flex flex-col justify-center px-4 md:px-0 relative z-10">
+            <h2>{item.name}</h2>
+            <p>{item.description}</p>
+          </div>
+        </div>
+      ))
+    }
   </section>
 
   <!-- Philosophy Section -->
@@ -97,7 +149,10 @@ const ctaBodyHtml = await marked.parse(ctaBody);
       >
         {philosophyTitle}
       </h2>
-      <div class="text-stone-600 text-lg leading-relaxed space-y-6" set:html={philosophyBodyHtml} />
+      <div
+        class="text-stone-600 text-lg leading-relaxed space-y-6"
+        set:html={philosophyBodyHtml}
+      />
     </div>
   </section>
 

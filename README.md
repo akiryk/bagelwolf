@@ -235,3 +235,15 @@ Guidelines for AI tools live in:
 
 Bagelwolf is a small artisanal bakery dedicated to slow-fermented bagels and breads, crafted in Durango, Colorado.
 This site exists to share the story, explain the craft, and make it easy to order fresh baked goods.
+
+## Typography
+
+Fonts used in the size are Open Sans and Spectral, which are both available on Google Fonts.
+h1: Open Sans 300, 36px
+h2: Open Sans 300, 32px
+Body: Spectral 500, 20px
+
+## Grid/Layout
+
+Refer to docs/layout-patterns.
+This repo also includes a dev-only grid overlay tool. See docs/dev/grid-overlay.md.

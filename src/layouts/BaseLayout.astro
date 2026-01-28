@@ -113,8 +113,13 @@ function navLinkClasses(href: string, size: 'sm' | '2xl' = 'sm'): string {
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta name="msapplication-TileColor" content="#db5009" />
     <meta name="theme-color" content="#ffffff" />
+    {import.meta.env.DEV && (
+      <script type="module">
+        import "/src/scripts/dev-grid-overlay.ts";
+      </script>
+    )}
   </head>
-  <body class="min-h-screen flex flex-col bg-white text-stone-800 font-sans">
+  <body class="min-h-screen bg-white text-stone-800 font-sans">
     <header class="bg-white relative">
       <!-- Mobile hamburger menu button - fixed in upper left -->
       <button
@@ -168,7 +173,9 @@ function navLinkClasses(href: string, size: 'sm' | '2xl' = 'sm'): string {
       </div>
 
       <!-- Navigation Bar - desktop only -->
-      <nav class="hidden md:block border-t border-b border-stone-200 overflow-visible">
+      <nav
+        class="hidden md:block border-t border-b border-stone-200 overflow-visible"
+      >
         <!-- Desktop nav with true center alignment, respects grid margins -->
         <div
           class="grid grid-cols-3 items-center mx-auto py-3 px-[var(--grid-margin)]"
