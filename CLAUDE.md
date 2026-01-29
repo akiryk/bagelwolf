@@ -121,6 +121,7 @@ sm: 640px (Tailwind default)
 md: 840px
 lg: 1100px
 xl: 1320px
+xxl: 2020px
 
 When writing responsive utilities, md:, lg:, and xl: correspond to the values above.
 
