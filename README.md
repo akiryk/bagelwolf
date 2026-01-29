@@ -242,6 +242,7 @@ Fonts used in the size are Open Sans and Spectral, which are both available on G
 h1: Open Sans 300, 36px
 h2: Open Sans 300, 32px
 Body: Spectral 500, 20px
+Highlighted body sections: Spectral 500, 24px
 
 ## Grid/Layout
 

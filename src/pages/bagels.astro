@@ -31,15 +31,13 @@ const ctaBodyHtml = await marked.parse(ctaBody);
   description="Explore our sourdough bagel menu: Everything, Sesame, Plain, Poppy, Salt, and Pumpernickel. Hand-rolled, boiled, and baked fresh every Saturday in Durango, Colorado."
 >
   <!-- Hero Section -->
-  <section class="bagels-hero relative h-[120vh]">
-    <div
-      class="sticky top-0 h-[400px] max-md:h-[200px] overflow-hidden bg-cover"
-      style={`
+  <section
+    class="bagels-hero overflow-hidden bg-cover"
+    style={`
       background-image: url(${bagelHero.src});
       background-position: center bottom;
     `}
-    >
-    </div>
+  >
   </section>
 
   <style>
@@ -51,9 +49,15 @@ const ctaBodyHtml = await marked.parse(ctaBody);
     /* Hero paragraph with drop cap */
     .hero-paragraph {
       font-family: 'Spectral', serif;
-      font-size: 24px;
+      font-size: 20px;
       color: #000;
       line-height: 1.5;
+    }
+
+    @media (min-width: 1100px) {
+      .hero-paragraph {
+        font-size: 24px;
+      }
     }
 
     .hero-paragraph::first-letter {
@@ -102,9 +106,11 @@ const ctaBodyHtml = await marked.parse(ctaBody);
   </style>
 
   <!-- Hero Paragraph Section -->
-  <section class="grid-container py-16 md:py-20">
+  <section class="grid-container py-16 md:py-10">
     <div class="grid-9">
-      <div class="col-span-9 md:col-span-5 md:col-start-3">
+      <div
+        class="col-span-9 md:col-span-6 md:col-start-3 lg:col-span-5 lg:col-start-3"
+      >
         <p class="hero-paragraph">
           {introBody}
         </p>
@@ -142,17 +148,19 @@ const ctaBodyHtml = await marked.parse(ctaBody);
   </section>
 
   <!-- Philosophy Section -->
-  <section class="py-16 md:py-20">
-    <div class="max-w-3xl mx-auto px-4">
-      <h2
-        class="font-serif text-3xl md:text-4xl font-medium text-stone-900 mb-8 text-center"
-      >
-        {philosophyTitle}
-      </h2>
+  <section class="grid-container py-16 md:py-10">
+    <div class="grid-9">
       <div
-        class="text-stone-600 text-lg leading-relaxed space-y-6"
-        set:html={philosophyBodyHtml}
-      />
+        class="col-span-9 md:col-span-6 md:col-start-3 lg:col-span-5 lg:col-start-3"
+      >
+        <h2 class="font-sans font-light text-[32px] text-stone-900 mb-8">
+          {philosophyTitle}
+        </h2>
+        <div
+          class="font-serif font-medium text-[20px] lg:text-[24px] text-stone-600 leading-relaxed space-y-6"
+          set:html={philosophyBodyHtml}
+        />
+      </div>
     </div>
   </section>
 

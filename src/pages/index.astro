@@ -4,7 +4,7 @@ import SignupForm from '../components/SignupForm.astro';
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import ParallaxScript from '../components/scripts/ParallaxScript.js';
-import heroBoule from '../assets/originals/hero-boule-01.jpg';
+import heroBoule from '../assets/originals/hero-boule-02.jpg';
 
 const aboutEntries = await getCollection('about');
 const about = aboutEntries[0];
@@ -50,7 +50,7 @@ const { text: orderButtonText, url: orderButtonUrl } = orderButton.data;
   >
     <div class="hero-split-left h-[472px] overflow-hidden">
       <img
-        src="/images/bagels-lg.png"
+        src="/images/bagels-lg-ak-03.jpg"
         alt="Freshly baked sourdough bagels"
         class="parallax-image w-full h-[750px] lg:h-[850px] xl:h-[1000px] 2xl:h-[1100px] object-cover"
         data-speed="0.3"
