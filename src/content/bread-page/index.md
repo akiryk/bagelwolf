@@ -1,11 +1,11 @@
 ---
-introTitle: Artisan Breads
+introTitle: Artisan Breads — coming soon (maybe!)
 introBody: >-
-  All my breads are naturally leavened with the same sourdough starter used with
-  my bagels. Long, slow fermentation for maximum flavor and digestibility. Yum. 
+  I bake sourdough bread as well as bagels but I'm not yet baking in quantity to
+  sell or distribute. Please reach our or check back!
 
 
-  Yum!
+  All my breads are naturally leavened with the same sourdough starter used with my bagels. 
 items:
   - name: Country Sourdough
     description: Classic open-crumb sourdough boule with a deep, caramelized crust.
